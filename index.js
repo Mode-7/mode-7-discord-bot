@@ -11,7 +11,9 @@ client.once("ready", () => {
 });
 
 client.on("message", function (message) {
-    if (!message.member.roles.cache.has(process.env["ANNOUNCER_ROLE"]) || !message.content.startsWith(prefix) || message.author.bot) return;
+    if (message.author.bot) return;
+    if (!message.content.startsWith(prefix)) return;
+    if (!message.member.roles.cache.has(process.env["ANNOUNCER_ROLE"])) return;
 
     const commandBody = message.content.slice(prefix.length);
     const args = commandBody.split(' ');
@@ -21,7 +23,7 @@ client.on("message", function (message) {
         const timeTaken = Date.now() - message.createdTimestamp;
         message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
     } else if (command == "uwu") {
-        message.reply(`UwU`);
+        message.send(`UwU`);
     } else if (command == "anunciar") {
         var announcement = "";
         for (const word in args) {
