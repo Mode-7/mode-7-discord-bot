@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const config = require("./config.json");
+// const config = require("./config.json"); // No necesitamos este archivo al hacer deply en Heroku
 
 const client = new Discord.Client();
 const webhookClient = new Discord.WebhookClient(config.webhookID, config.webhookToken);
@@ -29,5 +29,5 @@ client.on("message", function (message) {
     }                  
 });
 
-client.login(process.env.BOT_TOKEN);
 // client.login(config.token);
+client.login(process.env.BOT_TOKEN); // BOT_TOKEN es el Config Var creado en Heroku
