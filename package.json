@@ -1,0 +1,24 @@
+{
+  "name": "mode-7-discord-bot",
+  "version": "1.0.0",
+  "description": "Tu pequeño bot amigo, que vive en el Discord de Mode 7.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luiscarlospando/mode-7-discord-bot.git"
+  },
+  "keywords": [
+    "mode 7",
+    "discord",
+    "bot"
+  ],
+  "author": "Luis Carlos Pando <hey@luiscarlospando.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luiscarlospando/mode-7-discord-bot/issues"
+  },
+  "homepage": "https://github.com/luiscarlospando/mode-7-discord-bot#readme"
+}
