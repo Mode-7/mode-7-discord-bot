@@ -2,16 +2,16 @@ const Discord = require("discord.js");
 // const config = require("./config.json"); // No necesitamos este archivo al hacer deply en Heroku
 
 const client = new Discord.Client();
-const webhookClient = new Discord.WebhookClient(config.webhookID, config.webhookToken);
+const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.env.WEBHOOK_TOKEN);
 
-const prefix = config.prefix;
+const prefix = process.env.PREFIX;
 
 client.once("ready", () => {
     console.log("Estoy listo.");
 });
 
 client.on("message", function (message) {
-    if (!message.member.roles.cache.has(config["announcer-role"]) || !message.content.startsWith(prefix) || message.author.bot) return;
+    if (!message.member.roles.cache.has(process.env["ANNOUNCER_ROLE"]) || !message.content.startsWith(prefix) || message.author.bot) return;
 
     const commandBody = message.content.slice(prefix.length);
     const args = commandBody.split(' ');
