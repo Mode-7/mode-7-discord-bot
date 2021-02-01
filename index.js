@@ -12,7 +12,7 @@ client.once("ready", () => {
 });
 
 client.on("guildMemberAdd", function (member) {
-    member.guild.channels.get(welcomeChannelID).send(`¡Bienvenid@ ${member}!  🎉 🤗\nAntes de comenzar, te pedimos leer las #📜│reglas y si necesitas ayuda con algo, puedes preguntar en #💬│general.\n\nDisfruta de tu estancia en Mode 7.`); 
+    member.guild.channels.get(welcomeChannelID).send(`¡Bienvenid@!  🎉 🤗\nAntes de comenzar, te pedimos leer las #📜│reglas y si necesitas ayuda con algo, puedes preguntar en #💬│general.\n\nDisfruta de tu estancia en Mode 7.`); 
 });
 
 client.on("message", function (message) {
