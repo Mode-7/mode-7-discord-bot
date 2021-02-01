@@ -7,7 +7,7 @@ const webhookClient = new Discord.WebhookClient(config.webhookID, config.webhook
 const prefix = config.prefix;
 
 client.once("ready", () => {
-    console.log("Listo para la acción.");
+    console.log("Estoy listo.");
 });
 
 client.on("message", function (message) {
