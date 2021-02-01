@@ -5,9 +5,15 @@ const client = new Discord.Client();
 const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.env.WEBHOOK_TOKEN);
 
 const prefix = process.env.PREFIX;
+const welcomeChannelID = 741028008361721866;
 
 client.once("ready", () => {
     console.log("Estoy listo.");
+});
+
+client.on("guildMemberAdd", function (member) {
+    let welcomeText = `¡Bienvenid@ ${member}!  🎉 🤗\nAntes de comenzar, te pedimos leer las #📜│reglas y si necesitas ayuda con algo, puedes preguntar en #💬│general.\n\nDisfruta de tu estancia en Mode 7.`
+    member.guild.channels.get(welcomeChannelID).send(welcomeText); 
 });
 
 client.on("message", function (message) {
