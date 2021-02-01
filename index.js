@@ -13,7 +13,6 @@ client.once("ready", () => {
 client.on("message", function (message) {
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
-    if (!message.member.roles.cache.has(process.env["ANNOUNCER_ROLE"])) return;
 
     const commandBody = message.content.slice(prefix.length);
     const args = commandBody.split(' ');
@@ -24,12 +23,14 @@ client.on("message", function (message) {
         message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
     } else if (command == "uwu") {
         message.reply(`UwU`);
-    } else if (command == "anunciar") {
-        var announcement = "";
-        for (const word in args) {
-            announcement = announcement + args[word] + " ";
+    } else if (message.member.roles.cache.has(process.env["ANNOUNCER_ROLE"])) {
+        if (command == "anunciar") {
+            var announcement = "";
+            for (const word in args) {
+                announcement = announcement + args[word] + " ";
+            }
+            webhookClient.send(announcement)
         }
-        webhookClient.send(announcement)
     }                  
 });
 
