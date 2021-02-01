@@ -18,14 +18,16 @@ client.on("message", function (message) {
     const args = commandBody.split(' ');
     const command = args.shift().toLowerCase();
 
-    if (!message.member.roles.cache.has(process.env["ANNOUNCER_ROLE"])) {
+    function comandosPublicos () {
         if (command === "hola") {
             const timeTaken = Date.now() - message.createdTimestamp;
             message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
         } else if (command == "uwu") {
             message.reply(`UwU`);
         }
-    } else {
+    }
+
+    function comandosPrivados() {
         if (command == "anunciar") {
             var announcement = "";
             for (const word in args) {
@@ -33,6 +35,13 @@ client.on("message", function (message) {
             }
             webhookClient.send(announcement)
         }
+    }
+
+    if (!message.member.roles.cache.has(process.env["ANNOUNCER_ROLE"])) {
+        comandosPublicos();
+    } else {
+        comandosPublicos();
+        comandosPrivados();
     }               
 });
 
