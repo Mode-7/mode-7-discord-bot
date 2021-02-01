@@ -5,7 +5,7 @@ const client = new Discord.Client();
 const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.env.WEBHOOK_TOKEN);
 
 const prefix = process.env.PREFIX;
-const welcomeChannelID = 741028008361721866;
+const welcomeChannelID = "741028008361721866";
 
 client.once("ready", () => {
     console.log("Estoy listo.");
