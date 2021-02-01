@@ -29,4 +29,5 @@ client.on("message", function (message) {
     }                  
 });
 
-client.login(config.token);
+client.login(process.env.token);
+// client.login(config.token);
