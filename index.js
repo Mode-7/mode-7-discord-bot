@@ -23,7 +23,7 @@ client.on("message", function (message) {
         const timeTaken = Date.now() - message.createdTimestamp;
         message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
     } else if (command == "uwu") {
-        message.send(`UwU`);
+        message.reply(`UwU`);
     } else if (command == "anunciar") {
         var announcement = "";
         for (const word in args) {
