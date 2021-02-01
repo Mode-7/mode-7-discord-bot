@@ -18,12 +18,14 @@ client.on("message", function (message) {
     const args = commandBody.split(' ');
     const command = args.shift().toLowerCase();
 
-    if (command === "hola") {
-        const timeTaken = Date.now() - message.createdTimestamp;
-        message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
-    } else if (command == "uwu") {
-        message.reply(`UwU`);
-    } else if (message.member.roles.cache.has(process.env["ANNOUNCER_ROLE"])) {
+    if (!message.member.roles.cache.has(process.env["ANNOUNCER_ROLE"])) {
+        if (command === "hola") {
+            const timeTaken = Date.now() - message.createdTimestamp;
+            message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
+        } else if (command == "uwu") {
+            message.reply(`UwU`);
+        }
+    } else {
         if (command == "anunciar") {
             var announcement = "";
             for (const word in args) {
@@ -31,7 +33,7 @@ client.on("message", function (message) {
             }
             webhookClient.send(announcement)
         }
-    }                  
+    }               
 });
 
 // client.login(config.token);
