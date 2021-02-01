@@ -18,7 +18,7 @@ client.on("message", function (message) {
     const args = commandBody.split(' ');
     const command = args.shift().toLowerCase();
 
-    function comandosPublicos () {
+    function comandosPublicos() {
         if (command === "hola") {
             const timeTaken = Date.now() - message.createdTimestamp;
             message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
