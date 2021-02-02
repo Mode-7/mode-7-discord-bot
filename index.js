@@ -13,6 +13,7 @@ client.once("ready", () => {
     console.log("Estoy listo.");
 });
 
+// Bienvenida usuarios
 client.on("guildMemberAdd", function (member) {
     console.log(member);
 
@@ -22,6 +23,7 @@ client.on("guildMemberAdd", function (member) {
     channel.send(welcomeText);
 });
 
+// Comandos públicos y privados con prefijo (?)
 client.on("message", function (message) {
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
@@ -55,6 +57,17 @@ client.on("message", function (message) {
         comandosPublicos();
         comandosPrivados();
     }               
+});
+
+// Press F to pay Respects
+client.on("message", function (message) {
+    if (message.author.bot) return;
+
+    const command = message.content;
+
+    if (command === "f" || command === "F") {
+        message.send(`${member.id} has paid respect.`);
+    }
 });
 
 // client.login(config.token);
