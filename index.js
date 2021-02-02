@@ -59,6 +59,37 @@ client.on("message", function (message) {
     }               
 });
 
+// Comandos jugones
+client.on("message", function (message) {
+    if (message.author.bot) return;
+
+    const respuestasJugon = [
+        "¿pero qué tan jugón",
+        "jugón mis webos",
+        "ni eres tan jugón, ¿pa' qué te haces?",
+        "ya no te he visto tan jugón",
+        "¡ahh jugoncito!",
+        "una sesioncita jugona, ¿o qué?"
+    ];
+
+    const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
+
+    const respuestasJugones = [
+        "¿andan jugones o qué?",
+        "la pura crema y nada jugona aquí"
+    ];
+
+    const responseJugones = Math.floor(Math.random() * respuestasJugones.length);
+
+    const command = message.content;
+
+    if (command === "jugon" || command === "jugón" || command === "jugona") {
+        message.channel.send(responseJugon);
+    } else if (command === "jugones" || command === "jugonas") {
+        message.channel.send(responseJugones);
+    }
+});
+
 // Press F to pay Respects
 client.on("message", function (message) {
     if (message.author.bot) return;
