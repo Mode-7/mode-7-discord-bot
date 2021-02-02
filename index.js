@@ -28,6 +28,17 @@ client.on("message", function (message) {
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
 
+    const fotosChawi = [
+        "https://i.ytimg.com/vi/ugPb9CahqJc/maxresdefault.jpg",
+        "https://scontent.fymy1-2.fna.fbcdn.net/v/t15.5256-10/p160x160/128624914_880513332721410_4189615889164784461_n.jpg?_nc_cat=109&ccb=2&_nc_sid=08861d&_nc_ohc=Q_VHOZp0_isAX9AYqAx&_nc_ht=scontent.fymy1-2.fna&oh=76d00f5f5330a5bb4b55836ba99bc1f5&oe=6030F311",
+        "https://i.ytimg.com/vi/0BG64GkXk08/maxresdefault.jpg",
+        "https://lh3.googleusercontent.com/proxy/vyb8zUwxQE1X0ezg2YwA3-BzV-ZJ34ll8QlvdO9bNiew1Pe_AOL69diNFJMvjd4xYs_mCvrqFZ9tsazsWBTvCrv69kIklm1ACAYylA",
+        "https://lh3.googleusercontent.com/proxy/PYznHv2pXAhh7M_CIt2xcI0J7lX1l-sEadso_-ivC1E6k5r1O3-fZ5BYxzjbRv9yh8PTjxM-bOn9cs2k0NcfkE_oDUdO35tIU3vyuA",
+        "https://www.segundoasegundo.com/wp-content/uploads/2018/02/5C26F054-0A66-468A-822A-3C2C4CE66A38.jpeg"
+    ];
+
+    const responseChawi = Math.floor(Math.random() * fotosChawi.length);
+
     const commandBody = message.content.slice(prefix.length);
     const args = commandBody.split(' ');
     const command = args.shift().toLowerCase();
@@ -38,6 +49,8 @@ client.on("message", function (message) {
             message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
         } else if (command == "uwu") {
             message.reply(`UwU`);
+        } else if (command == "chawi") {
+            message.channel.send(fotosChawi[responseChawi]);
         }
     }
 
