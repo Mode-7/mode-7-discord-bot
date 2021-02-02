@@ -76,12 +76,6 @@ client.on("message", function (message) {
 client.on("message", function (message) {
     if (message.author.bot) return;
 
-    const palabrasTriggerJugon = [
-        "jugón",
-        "jugon",
-        "jugona"
-    ];
-
     const respuestasJugon = [
         "¿pero qué tan jugón",
         "jugón mis webos",
@@ -97,11 +91,6 @@ client.on("message", function (message) {
 
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
 
-    const palabrasTriggerJugones = [
-        "jugones",
-        "jugonas"
-    ];
-
     const respuestasJugones = [
         "¿andan jugones o qué?",
         "la pura crema y nada jugona aquí"
@@ -111,18 +100,10 @@ client.on("message", function (message) {
 
     const command = message.content;
 
-    for (var i = 0; i > palabrasTriggerJugon.length; i++) {
-        if (command.includes(palabrasTriggerJugon[i])) {
-            console.log(palabrasTriggerJugon[i]);
-            message.channel.send(respuestasJugon[responseJugon]);
-        }
-    }
-
-    for (var i = 0; i > palabrasTriggerJugones.length; i++) {
-        if (command.includes(palabrasTriggeerJugones[i])) {
-            console.log(palabrasTriggerJugones[i]);
-            message.channel.send(respuestasJugon[responseJugon]);
-        }
+    if (command.includes("jugon") || command.includes("jugón") || command.includes("jugona")) {
+        message.channel.send(respuestasJugon[responseJugon]);
+    } else if (command.includes("jugones") || command.includes("jugonas")) {
+        message.channel.send(respuestasJugones[responseJugones]);
     }
 });
 
