@@ -11,15 +11,15 @@ const prefix = process.env.PREFIX;
 
 client.once("ready", () => {
     console.log("Estoy listo.");
-});
 
-client.on("guildMemberAdd", function (member) {
-    console.log(member);
+    client.on("guildMemberAdd", function (member) {
+        console.log(member);
 
-    const welcomeText = `¡Bienvenid@  <@${member.id}> + ! 🎉 🤗\nAntes de comenzar, te pedimos leer las ${member.guild.channels.cache.get(rulesChannelID).toString()} y si necesitas ayuda con algo, puedes preguntar en ${member.guild.channels.cache.get(generalChannelID).toString()}.\n\nDisfruta de tu estancia en Mode 7.`
-    const channel = member.guild.channels.cache.get(welcomeChannelID);
+        const welcomeText = `¡Bienvenid@  <@${member.id}> + ! 🎉 🤗\nAntes de comenzar, te pedimos leer las ${member.guild.channels.cache.get(rulesChannelID).toString()} y si necesitas ayuda con algo, puedes preguntar en ${member.guild.channels.cache.get(generalChannelID).toString()}.\n\nDisfruta de tu estancia en Mode 7.`
+        const channel = member.guild.channels.cache.get(welcomeChannelID);
 
-    channel.send(welcomeText);
+        channel.send(welcomeText);
+    });
 });
 
 client.on("message", function (message) {
