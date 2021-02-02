@@ -102,7 +102,9 @@ client.on("message", function (message) {
 
     if (command.includes("jugon") || command.includes("jugón") || command.includes("jugona")) {
         message.channel.send(respuestasJugon[responseJugon]);
-    } else if (command.includes("jugones") || command.includes("jugonas")) {
+    } 
+    
+    if (command.includes("jugones") || command.includes("jugonas")) {
         message.channel.send(respuestasJugones[responseJugones]);
     }
 });
