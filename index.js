@@ -82,7 +82,11 @@ client.on("message", function (message) {
         "ni eres tan jugón, ¿pa' qué te haces?",
         "ya no te he visto tan jugón",
         "¡ahh jugoncito!",
-        "una sesioncita jugona, ¿o qué?"
+        "una sesioncita jugona, ¿o qué?",
+        "10/10 jugaré otra vez",
+        "los pelijuegos no cuentan",
+        "¿a ver la boleta? 👀",
+        "puro free to play, así que chiste"
     ];
 
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
