@@ -66,7 +66,7 @@ client.on("message", function (message) {
     const command = message.content;
 
     if (command === "f" || command === "F") {
-        message.channel.send(`${message.member.user.username} has paid respect.`);
+        message.channel.send(`${message.member.user.username} pide "efes" en el chat.`);
     }
 });
 
