@@ -86,26 +86,17 @@ client.on("message", function (message) {
         "10/10 jugaré otra vez",
         "los pelijuegos no cuentan",
         "¿a ver la boleta? 👀",
-        "puro free to play, así que chiste"
-    ];
-
-    const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
-
-    const respuestasJugones = [
+        "puro free to play, así que chiste",
         "¿andan jugones o qué?",
         "la pura crema y nada jugona aquí"
     ];
 
-    const responseJugones = Math.floor(Math.random() * respuestasJugones.length);
+    const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
 
     const command = message.content;
 
-    if (command.includes("jugon") || command.includes("jugón") || command.includes("jugona")) {
+    if (command.includes("jugon") || command.includes("jugón") || command.includes("jugona") || command.includes("jugones") || command.includes("jugonas")) {
         message.channel.send(respuestasJugon[responseJugon]);
-    } 
-    
-    if (command.includes("jugones") || command.includes("jugonas")) {
-        message.channel.send(respuestasJugones[responseJugones]);
     }
 });
 
