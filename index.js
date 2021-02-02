@@ -11,11 +11,11 @@ const prefix = process.env.PREFIX;
 
 client.once("ready", () => {
     console.log("Estoy listo.");
-
-    welcome(client);
-
-    commands(client);
 });
+
+welcome(client);
+
+commands(client);
 
 // client.login(config.token);
 client.login(process.env.BOT_TOKEN); // BOT_TOKEN es el Config Var creado en Heroku
