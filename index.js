@@ -76,6 +76,14 @@ client.on("message", function (message) {
 client.on("message", function (message) {
     if (message.author.bot) return;
 
+    const palabrasTrigger = [
+        "jugón",
+        "jugon",
+        "jugona",
+        "jugones",
+        "jugonas"
+    ]
+
     const respuestasJugon = [
         "¿pero qué tan jugón",
         "jugón mis webos",
@@ -95,8 +103,11 @@ client.on("message", function (message) {
 
     const command = message.content;
 
-    if (command.includes("jugon") || command.includes("jugón") || command.includes("jugona") || command.includes("jugones") || command.includes("jugonas")) {
-        message.channel.send(respuestasJugon[responseJugon]);
+    for (var i = 0; i < palabrasTrigger.length; i++) {
+        if (command.includes(palabrasTrigger[i])) {
+            message.channel.send(respuestasJugon[responseJugon]);
+            break;
+        }
     }
 });
 
