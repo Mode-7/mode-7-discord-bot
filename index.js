@@ -66,7 +66,7 @@ client.on("message", function (message) {
     const command = message.content;
 
     if (command === "f" || command === "F") {
-        message.send(`${member.id} has paid respect.`);
+        message.send(`X has paid respect.`);
     }
 });
 
