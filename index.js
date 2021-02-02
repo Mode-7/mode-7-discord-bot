@@ -113,12 +113,14 @@ client.on("message", function (message) {
 
     for (var i = 0; i > palabrasTriggerJugon.length; i++) {
         if (command.includes(palabrasTriggerJugon[i])) {
+            console.log(palabrasTriggerJugon[i]);
             message.channel.send(respuestasJugon[responseJugon]);
         }
     }
 
     for (var i = 0; i > palabrasTriggerJugones.length; i++) {
         if (command.includes(palabrasTriggeerJugones[i])) {
+            console.log(palabrasTriggerJugones[i]);
             message.channel.send(respuestasJugon[responseJugon]);
         }
     }
