@@ -96,7 +96,7 @@ client.on("message", function (message) {
         "¿a ver la boleta? 👀",
         "puro free to play, así que chiste",
         "¿andan jugones o qué?",
-        "la pura crema y nada jugona aquí"
+        "la pura crema y nata jugona aquí"
     ];
 
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
