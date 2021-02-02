@@ -84,9 +84,9 @@ client.on("message", function (message) {
     const command = message.content;
 
     if (command === "jugon" || command === "jugón" || command === "jugona") {
-        message.channel.send(responseJugon);
+        message.channel.send(respuestasJugon[responseJugon]);
     } else if (command === "jugones" || command === "jugonas") {
-        message.channel.send(responseJugones);
+        message.channel.send(respuestasJugones[responseJugones]);
     }
 });
 
