@@ -138,7 +138,7 @@ let recordarM7GP = new cron.CronJob('00 30 8 * * 4', () => {
 recordarM7GP.start();
 
 // Mode 7 CTR
-let recordarM7CTR = new cron.CronJob('00 00 20 * * 2', () => {
+let recordarM7CTR = new cron.CronJob('00 30 8 * * 2', () => {
     let ctrChannel = client.channels.cache.get(ctrChannelID);
     ctrChannel.send(`¿Ya listos para el desvergue de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
 }, null, false, 'America/Chihuahua');
