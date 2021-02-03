@@ -48,7 +48,7 @@ client.on("message", function (message) {
             const timeTaken = Date.now() - message.createdTimestamp;
             message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
         } else if (command == "uwu") {
-            message.reply(`UwU`);
+            message.reply(`:uwu:`);
         } else if (command == "chawi") {
             message.channel.send(fotosChawi[responseChawi]);
         }
