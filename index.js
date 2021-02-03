@@ -7,6 +7,7 @@ const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.
 welcomeChannelID = '741028008361721866'; // Canal de bienvenida
 rulesChannelID = '479304179102384128'; // Canal de reglas
 generalChannelID = '478782494666129419'; // Canal general
+mariokartChannelID = '700453224213250048'; // Canal Mario Kart
 
 const prefix = process.env.PREFIX;
 
@@ -124,9 +125,9 @@ client.on("message", function (message) {
 });
 
 // Mode 7 Grand Prix
-let recordatorioM7GP = new cron.CronJob('00 45 18 * * *', () => {
+let recordatorioM7GP = new cron.CronJob('00 49 18 * * *', () => {
     // This runs every day at 10:30:00, you can do anything you want
-    let marioKartChannel = guild.channels.get('700453224213250048');
+    let marioKartChannel = guild.channels.cache.get(mariokartChannelID);
     marioKartChannel.send(`¿Ya listos para el #M7GP de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
 });
 
