@@ -21,7 +21,7 @@ client.once("ready", () => {
 });
 
 // Bienvenida usuarios
-client.on("guildMemberAdd", function (member) {
+client.on("guildMemberAdd", (member) => {
     console.log(member);
 
     const welcomeText = `¡Bienvenid@  <@${member.id}>! 🎉 🤗\nAntes de comenzar, te pedimos leer las ${member.guild.channels.cache.get(rulesChannelID).toString()} y si necesitas ayuda con algo, puedes preguntar en ${member.guild.channels.cache.get(generalChannelID).toString()}.\n\nDisfruta de tu estancia en Mode 7.`
@@ -31,7 +31,7 @@ client.on("guildMemberAdd", function (member) {
 });
 
 // Comandos públicos y privados con prefijo (?)
-client.on("message", function (message) {
+client.on("message", (message) => {
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
 
@@ -80,7 +80,7 @@ client.on("message", function (message) {
 });
 
 // Comandos jugones
-client.on("message", function (message) {
+client.on("message", (message) => {
     if (message.author.bot) return;
 
     const palabrasTrigger = [
@@ -119,7 +119,7 @@ client.on("message", function (message) {
 });
 
 // Press F to pay Respects
-client.on("message", function (message) {
+client.on("message", (message) => {
     if (message.author.bot) return;
 
     const command = message.content;
@@ -130,14 +130,11 @@ client.on("message", function (message) {
 });
 
 // Mode 7 Grand Prix
-let recordarM7GP = new cron.CronJob('00 28 19 * * *', () => {
-    // This runs every day at 10:30:00, you can do anything you want
+let recordarM7GP = new cron.CronJob('00 30 8 * * *', () => {
     let mariokartChannel = client.channels.cache.get(mariokartChannelID);
-    // console.log('¿Ya listos para el #M7GP de hoy mis jugones? https://i.imgur.com/IaODJMn.gif');
     mariokartChannel.send(`¿Ya listos para el #M7GP de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
 }, null, false, 'America/Chihuahua');
 
-// When you want to start it, use:
 recordarM7GP.start();
 
 // client.login(config.token);
