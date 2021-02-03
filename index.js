@@ -124,7 +124,7 @@ client.on("message", function (message) {
 });
 
 // Mode 7 Grand Prix
-let recordatorioM7GP = new cron.CronJob('00 39 19 * * *', () => {
+let recordatorioM7GP = new cron.CronJob('00 42 18 * * *', () => {
     // This runs every day at 10:30:00, you can do anything you want
     let marioKartChannel = yourGuild.channels.get('700453224213250048');
     marioKartChannel.send(`¿Ya listos para el #M7GP de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
