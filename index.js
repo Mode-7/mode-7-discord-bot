@@ -62,7 +62,8 @@ client.on("message", (message) => {
         } else if (command == "chawi") {
             message.channel.send(fotosChawi[responseChawi]);
         } else if (command == "encuentra") {
-            var user = message.jugonactivoRolID.members.cache.random();
+            var currentRole = message.guild.roles.cache.get(jugonactivoRolID).members.map(m=>m.user.id);
+            var user = message.currentRole.members.cache.random();
             message.channel.send(`El usuario más jugón es: ${user.user}`);
         }
     }
