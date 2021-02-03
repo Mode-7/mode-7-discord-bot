@@ -129,7 +129,7 @@ client.on("message", function (message) {
     const command = message.content;
 
     if (command === "m7gp") {
-        message.channel.send(`¿Ya listos para el #M7GP de hoy mis jugones?\n\nhttps://i.imgur.com/IaODJMn.gif`);
+        message.channel.send(`¿Ya listos para el #M7GP de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
     }
 });
 
