@@ -4,13 +4,12 @@ const cron = require("cron");
 
 const client = new Discord.Client();
 const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.env.WEBHOOK_TOKEN);
-const guildID = process.env.GUILD_ID;
 
 // IDs de canales
 const welcomeChannelID = '741028008361721866'; // Canal de bienvenida
 const rulesChannelID = '479304179102384128'; // Canal de reglas
 const generalChannelID = '478782494666129419'; // Canal general
-const mariokartChannelID = '700453224213250048'; // Canal Mario Kart
+const mariokartChannelID = '478782450806292481'; // Canal Mario Kart
 
 // Prefijo para comandos
 const prefix = process.env.PREFIX;
