@@ -13,7 +13,7 @@ const mariokartChannelID = '478782450806292481'; // Canal Mario Kart
 const ctrChannelID = '731357870364295198'; // Canal Crash Team Racing
 
 // IDs de roles
-const jugonactivoRolID = '728027086157119639' // Rol de Jugón Activo
+const jugonactivoRolID = '806610412300533761' // Rol de Jugón Activo
 
 // Prefijo para comandos
 const prefix = process.env.PREFIX;
