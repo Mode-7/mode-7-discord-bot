@@ -63,7 +63,7 @@ client.on("message", (message) => {
 
     function comandosPrivados() {
         if (command == "anunciar") {
-            var announcement = "";
+            let announcement = "";
             for (const word in args) {
                 announcement = announcement + args[word] + " ";
             }
@@ -89,7 +89,7 @@ client.on("message", (message) => {
         "jugona",
         "jugones",
         "jugonas"
-    ]
+    ];
 
     const respuestasJugon = [
         "¿pero qué tan jugón",
@@ -110,7 +110,7 @@ client.on("message", (message) => {
 
     const command = message.content;
 
-    for (var i = 0; i < palabrasTrigger.length; i++) {
+    for (let i = 0; i < palabrasTrigger.length; i++) {
         if (command.includes(palabrasTrigger[i])) {
             message.channel.send(respuestasJugon[responseJugon]);
             break;
