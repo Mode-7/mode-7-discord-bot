@@ -13,7 +13,10 @@ const mariokartChannelID = '478782450806292481'; // Canal Mario Kart
 const ctrChannelID = '731357870364295198'; // Canal Crash Team Racing
 
 // IDs de roles
-const jugonactivoRolID = '806610412300533761' // Rol de Jugón Activo
+const jugonnovatoRolID = '806620168939503636'; // Rol de Jugón Novato
+const jugonactivoRolID = '728027086157119639'; // Rol de Jugón Activo
+const jugonsemiactivoRolID = '806620222228398122'; // Rol de Jugón Semi Activo
+const jugonleyendaRolID = '806620208705568768'; // Rol de Jugón Leyenda
 
 // Prefijo para comandos
 const prefix = process.env.PREFIX;
@@ -62,8 +65,7 @@ client.on("message", (message) => {
         } else if (command == "chawi") {
             message.channel.send(fotosChawi[responseChawi]);
         } else if (command == "encuentra") {
-            var currentRole = message.guild.roles.cache.get(jugonactivoRolID);
-            var user = message.currentRole.members.cache.random();
+            var user = message.guild.members.cache.random();
             message.channel.send(`El usuario más jugón es: ${user.user}`);
         }
     }
