@@ -10,6 +10,7 @@ const welcomeChannelID = '741028008361721866'; // Canal de bienvenida
 const rulesChannelID = '479304179102384128'; // Canal de reglas
 const generalChannelID = '478782494666129419'; // Canal general
 const mariokartChannelID = '478782450806292481'; // Canal Mario Kart
+const ctrChannelID = '731357870364295198'; // Canal Crash Team Racing
 
 // Prefijo para comandos
 const prefix = process.env.PREFIX;
@@ -135,6 +136,14 @@ let recordarM7GP = new cron.CronJob('00 30 8 * * 4', () => {
 }, null, false, 'America/Chihuahua');
 
 recordarM7GP.start();
+
+// Mode 7 CTR
+let recordarM7CTR = new cron.CronJob('00 00 20 * * 2', () => {
+    let ctrChannel = client.channels.cache.get(ctrChannelID);
+    ctrChannel.send(`¿Ya listos para el desvergue de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
+}, null, false, 'America/Chihuahua');
+
+recordarM7CTR.start();
 
 // client.login(config.token);
 client.login(process.env.BOT_TOKEN); // BOT_TOKEN es el Config Var creado en Heroku
