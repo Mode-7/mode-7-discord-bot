@@ -122,5 +122,16 @@ client.on("message", function (message) {
     }
 });
 
+// Mode 7 Grand Prix
+client.on("message", function (message) {
+    if (message.author.bot) return;
+
+    const command = message.content;
+
+    if (command === "m7gp") {
+        message.channel.send(`¿Ya listos para el #M7GP de hoy mis jugones?\n\nhttps://i.imgur.com/IaODJMn.gif`);
+    }
+});
+
 // client.login(config.token);
 client.login(process.env.BOT_TOKEN); // BOT_TOKEN es el Config Var creado en Heroku
