@@ -125,10 +125,11 @@ client.on("message", function (message) {
 });
 
 // Mode 7 Grand Prix
-let recordarM7GP = new cron.CronJob('00 55 18 * * *', () => {
+let recordarM7GP = new cron.CronJob('* * * * * *', () => {
     // This runs every day at 10:30:00, you can do anything you want
-    let marioKartChannel = guild.channels.cache.get(mariokartChannelID);
-    marioKartChannel.send(`¿Ya listos para el #M7GP de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
+    let mariokartChannel = guild.channels.get(mariokartChannelID);
+    console.log('¿Ya listos para el #M7GP de hoy mis jugones? https://i.imgur.com/IaODJMn.gif');
+    //mariokartChannel.send(`¿Ya listos para el #M7GP de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
 }, null, false, 'America/Chihuahua');
 
 // When you want to start it, use:
