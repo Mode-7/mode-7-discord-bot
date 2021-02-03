@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const cron = require("cron");
 // const config = require("./config.json"); // No necesitamos este archivo al hacer deply en Heroku
 
 const client = new Discord.Client();
@@ -123,15 +124,14 @@ client.on("message", function (message) {
 });
 
 // Mode 7 Grand Prix
-client.on("message", function (message) {
-    if (message.author.bot) return;
-
-    const command = message.content;
-
-    if (command === "m7gp") {
-        message.channel.send(`¿Ya listos para el #M7GP de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
-    }
+let recordatorioM7GP = new cron.CronJob('00 39 19 * * *', () => {
+    // This runs every day at 10:30:00, you can do anything you want
+    let marioKartChannel = yourGuild.channels.get('700453224213250048');
+    marioKartChannel.send(`¿Ya listos para el #M7GP de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
 });
+
+// When you want to start it, use:
+recordatorioM7GP.start();
 
 // client.login(config.token);
 client.login(process.env.BOT_TOKEN); // BOT_TOKEN es el Config Var creado en Heroku
