@@ -95,7 +95,7 @@ client.on("message", (message) => {
     ];
 
     const respuestasJugon = [
-        "¿pero qué tan jugón",
+        "¿pero qué tan jugón?",
         "jugón mis webos",
         "ni eres tan jugón, ¿pa' qué te haces?",
         "ya no te he visto tan jugón",
