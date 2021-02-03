@@ -13,10 +13,10 @@ const mariokartChannelID = '478782450806292481'; // Canal Mario Kart
 const ctrChannelID = '731357870364295198'; // Canal Crash Team Racing
 
 // IDs de roles
-const jugonnovatoRolID = '806620168939503636'; // Rol de Jugón Novato
-const jugonactivoRolID = '728027086157119639'; // Rol de Jugón Activo
-const jugonsemiactivoRolID = '806620222228398122'; // Rol de Jugón Semi Activo
-const jugonleyendaRolID = '806620208705568768'; // Rol de Jugón Leyenda
+const jugonNovatoRolID = '806620168939503636'; // Rol de Jugón Novato
+const jugonActivoRolID = '728027086157119639'; // Rol de Jugón Activo
+const jugonSemiActivoRolID = '806620222228398122'; // Rol de Jugón Semi Activo
+const jugonLeyendaRolID = '806620208705568768'; // Rol de Jugón Leyenda
 
 // Prefijo para comandos
 const prefix = process.env.PREFIX;
