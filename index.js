@@ -12,6 +12,9 @@ const generalChannelID = '478782494666129419'; // Canal general
 const mariokartChannelID = '478782450806292481'; // Canal Mario Kart
 const ctrChannelID = '731357870364295198'; // Canal Crash Team Racing
 
+// IDs de roles
+const jugonactivoRolID = '728027086157119639' // Rol de Jugón Activo
+
 // Prefijo para comandos
 const prefix = process.env.PREFIX;
 
@@ -59,7 +62,7 @@ client.on("message", (message) => {
         } else if (command == "chawi") {
             message.channel.send(fotosChawi[responseChawi]);
         } else if (command == "encuentra") {
-            var user = message.guild.members.cache.random();
+            var user = message.jugonactivoRolID.members.cache.random();
             message.channel.send(`El usuario más jugón es: ${user.user}`);
         }
     }
