@@ -67,6 +67,8 @@ client.on("message", (message) => {
         } else if (command == "encuentra") {
             var user = message.guild.members.cache.random();
             message.channel.send(`El usuario más jugón es: ${user.user}`);
+        } else if (command == "messirve") {
+            message.channel.send(`https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
         }
     }
 
