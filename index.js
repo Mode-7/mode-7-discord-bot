@@ -128,14 +128,15 @@ client.on("message", (message) => {
         "jugón mis webos",
         "ni eres tan jugón, ¿pa' qué te haces?",
         "ya no te he visto tan jugón",
-        "¡ahh jugoncito!",
+        "¡ah, jugoncito!",
         "una sesioncita jugona, ¿o qué?",
         "10/10 jugaré otra vez",
         "los pelijuegos no cuentan",
         "¿a ver la boleta? 👀",
         "puro free to play, así que chiste",
         "¿andan jugones o qué?",
-        "la pura crema y nata jugona aquí"
+        "la pura crema y nata jugona aquí",
+        "yo si te saco los negros más negros"
     ];
 
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
