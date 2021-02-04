@@ -177,12 +177,12 @@ let recordarM7CTR = new cron.CronJob('00 30 8 * * 2', () => {
 
 recordarM7CTR.start();
 
-// Obtener últimos dos mensajes y si son iguales, subirse al mame
+// Obtener últimos dos mensajes
 client.on("message", (message) => {
     let lastTwo = message.channel.messages.fetch({ limit: 2 });
     let last = lastTwo.last();
 
-    if (last === lastTwo) {
+    if (last == lastTwo) {
         message.channel.send(`${last.content}`);
     }
 });
