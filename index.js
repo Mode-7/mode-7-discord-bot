@@ -58,26 +58,35 @@ client.on("message", (message) => {
     const command = args.shift().toLowerCase();
 
     function comandosPublicos() {
-        if (command === "hola") {
-            const timeTaken = Date.now() - message.createdTimestamp;
-            message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
-        } else if (command == "uwu") {
-            message.reply(`<:uwu:806331721754214411>`);
-        } else if (command == "chawi") {
-            message.channel.send(fotosChawi[responseChawi]);
-        } else if (command == "encuentra") {
-            var user = message.guild.members.cache.random();
-            message.channel.send(`El usuario más jugón es: ${user.user}`);
-        } else if (command == "messirve") {
-            message.channel.send(`https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
-        } else if (command == "pildora") {
-            function coinFlip() {
-                var resultCoin = (Math.floor(Math.random() * 2) == 0) ? 'https://i.imgur.com/2kqsZNk.png' : 'https://i.imgur.com/pEDmvdR.png';
-                message.channel.send(resultCoin);
-            }
-            coinFlip();
-        } else if (command == "agradecido") {
-            message.channel.send(`https://i.imgur.com/ASnDi7B.png`);
+        switch (command) {
+            case "hola":
+                const timeTaken = Date.now() - message.createdTimestamp;
+                message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
+                break;
+            case "uwu":
+                message.reply(`<:uwu:806331721754214411>`);
+                break;
+            case "chawi":
+                message.channel.send(fotosChawi[responseChawi]);
+                break;
+            case "encuentra":
+                var user = message.guild.members.cache.random();
+                message.channel.send(`El usuario más jugón es: ${user.user}`);
+                break;
+            case "messirve":
+                message.channel.send(`https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
+                break;
+            case "pildora":
+                function coinFlip() {
+                    var resultCoin = (Math.floor(Math.random() * 2) == 0) ? 'https://i.imgur.com/2kqsZNk.png' : 'https://i.imgur.com/pEDmvdR.png';
+                    message.channel.send(resultCoin);
+                }
+                coinFlip();
+                break;
+            case "agradecido":
+                message.channel.send(`https://i.imgur.com/ASnDi7B.png`);
+                break;
+            default:
         }
     }
 
