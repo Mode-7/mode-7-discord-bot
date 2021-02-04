@@ -179,14 +179,12 @@ recordarM7CTR.start();
 
 // Obtener últimos dos mensajes
 client.on("message", (message) => {
-    message.channel.messages.fetch({ limit: 2 }).then(res => {
-        for (let i = 0; i < res.array().length; i++) {
-            let previous = res.array()[0];
-            let latest = res.array()[1];
+    message.channel.messages.fetch({ limit: 2 }).then(messages => {
+        let previous = messages.array()[0];
+        let latest = messages.array()[1];
 
-            if (latest.content == previous.content) {
-                message.channel.send(`${latest.content}`);
-            }
+        if (latest.content == previous.content) {
+            message.channel.send(`${latest.content}`);
         }
     });
 });
