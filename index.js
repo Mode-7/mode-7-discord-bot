@@ -70,7 +70,7 @@ client.on("message", (message) => {
                 message.channel.send(fotosChawi[responseChawi]);
                 break;
             case "encuentra":
-                var user = message.guild.members.cache.random();
+                let user = message.guild.members.cache.random();
                 message.channel.send(`El usuario más jugón es: ${user.user}`);
                 break;
             case "messirve":
@@ -78,7 +78,7 @@ client.on("message", (message) => {
                 break;
             case "pildora":
                 function coinFlip() {
-                    var resultCoin = (Math.floor(Math.random() * 2) == 0) ? 'https://i.imgur.com/2kqsZNk.png' : 'https://i.imgur.com/pEDmvdR.png';
+                    let resultCoin = (Math.floor(Math.random() * 2) == 0) ? 'https://i.imgur.com/2kqsZNk.png' : 'https://i.imgur.com/pEDmvdR.png';
                     message.channel.send(resultCoin);
                 }
                 coinFlip();
@@ -176,6 +176,18 @@ let recordarM7CTR = new cron.CronJob('00 30 8 * * 2', () => {
 }, null, false, 'America/Chihuahua');
 
 recordarM7CTR.start();
+
+// Obtener últimos dos mensajes
+client.on("message", (message) => {
+    if (message.author.bot) return;
+
+    const command = message.content;
+
+    channel.fetchMessages({ limit: 2 }).then(res => {
+        let lm = res.last();
+        console.log(lm);
+    });
+});
 
 // client.login(config.token);
 client.login(process.env.BOT_TOKEN); // BOT_TOKEN es el Config Var creado en Heroku
