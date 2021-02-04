@@ -193,6 +193,7 @@ client.on("message", (message) => {
 
         if (latest.content == previous.content) {
             message.channel.send(`${latest.content}`);
+            break;
         }
     });
 });
