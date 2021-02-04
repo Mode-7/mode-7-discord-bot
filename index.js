@@ -185,7 +185,7 @@ client.on("message", (message) => {
 
     message.channel.messages.fetch({ limit: 2 }).then(res => {
         let lm = res.last();
-        console.log(lm);
+        console.log(lm.content);
     });
 });
 
