@@ -171,7 +171,7 @@ recordarM7GP.start();
 
 let flyerM7GP = new cron.CronJob('00 00 11 * * 4', () => {
     let mariokartChannel = client.channels.cache.get(mariokartChannelID);
-    mariokartChannel.send(`Y acuérdense de compartir el flyer y el código del torneo con sus compas.\n\nCódigo: 0746-6549-8155\nLink este canal: https://discord.gg/U77J5c6\n\nhttps://i.imgur.com/qjQs9rq.png`);
+    mariokartChannel.send(`Y acuérdense de compartir el flyer y el código del torneo con sus compas.\n\nCódigo: 0746-6549-8155\nLink a este canal: https://discord.gg/U77J5c6\n\nhttps://i.imgur.com/qjQs9rq.png`);
 }, null, false, 'America/Chihuahua');
 
 flyerM7GP.start();
@@ -184,7 +184,7 @@ let recordarM7CTR = new cron.CronJob('00 30 8 * * 2', () => {
 
 recordarM7CTR.start();
 
-// Obtener últimos dos mensajes
+// Obtener últimos dos mensajes, comparar y empezar el mame
 client.on("message", (message) => {
     message.channel.messages.fetch({ limit: 2 }).then(messages => {
         let previous = messages.array()[0];
