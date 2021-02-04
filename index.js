@@ -169,6 +169,13 @@ let recordarM7GP = new cron.CronJob('00 30 8 * * 4', () => {
 
 recordarM7GP.start();
 
+let flyerM7GP = new cron.CronJob('00 00 11 * * 4', () => {
+    let mariokartChannel = client.channels.cache.get(mariokartChannelID);
+    mariokartChannel.send(`Y acuérdense de compartir el flyer y el código del torneo con sus compas para que le caigan a valer verga.\n\nCódigo: 0746-6549-8155\nLink este canal: https://discord.gg/U77J5c6\n\nhttps://i.imgur.com/qjQs9rq.png`);
+}, null, false, 'America/Chihuahua');
+
+flyerM7GP.start();
+
 // Mode 7 CTR
 let recordarM7CTR = new cron.CronJob('00 30 8 * * 2', () => {
     let ctrChannel = client.channels.cache.get(ctrChannelID);
