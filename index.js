@@ -45,9 +45,10 @@ client.on("message", (message) => {
         "https://i.ytimg.com/vi/ugPb9CahqJc/maxresdefault.jpg",
         "https://scontent.fymy1-2.fna.fbcdn.net/v/t15.5256-10/p160x160/128624914_880513332721410_4189615889164784461_n.jpg?_nc_cat=109&ccb=2&_nc_sid=08861d&_nc_ohc=Q_VHOZp0_isAX9AYqAx&_nc_ht=scontent.fymy1-2.fna&oh=76d00f5f5330a5bb4b55836ba99bc1f5&oe=6030F311",
         "https://i.ytimg.com/vi/0BG64GkXk08/maxresdefault.jpg",
-        "https://lh3.googleusercontent.com/proxy/vyb8zUwxQE1X0ezg2YwA3-BzV-ZJ34ll8QlvdO9bNiew1Pe_AOL69diNFJMvjd4xYs_mCvrqFZ9tsazsWBTvCrv69kIklm1ACAYylA",
-        "https://lh3.googleusercontent.com/proxy/PYznHv2pXAhh7M_CIt2xcI0J7lX1l-sEadso_-ivC1E6k5r1O3-fZ5BYxzjbRv9yh8PTjxM-bOn9cs2k0NcfkE_oDUdO35tIU3vyuA",
-        "https://www.segundoasegundo.com/wp-content/uploads/2018/02/5C26F054-0A66-468A-822A-3C2C4CE66A38.jpeg"
+        "https://www.segundoasegundo.com/wp-content/uploads/2018/02/5C26F054-0A66-468A-822A-3C2C4CE66A38.jpeg",
+        "https://scontent.felp1-1.fna.fbcdn.net/v/t1.0-9/117046000_3160858957295426_7318290246267524902_n.jpg?_nc_cat=100&ccb=2&_nc_sid=8bfeb9&_nc_eui2=AeEYkkQHwrrj_fVrzJGeK6E5C_9zwwrFHiUL_3PDCsUeJeVtQfMFst6PZtInjbWqOlI&_nc_ohc=2Ek_H6KTnp0AX9KXM42&_nc_ht=scontent.felp1-1.fna&oh=8e3293ba424215bfbc72bfd5bba5e2dd&oe=6040C991",
+        "https://scontent.felp1-1.fna.fbcdn.net/v/t1.0-9/103328412_3330621733628992_802055698247855747_n.jpg?_nc_cat=107&ccb=2&_nc_sid=8bfeb9&_nc_eui2=AeFnwFInCw0OG942S3bL3b9_J6aNbhVbSaInpo1uFVtJoh7LKEX26mehgdurW9AjT5w&_nc_ohc=kBPwzKyzKn8AX80FXy8&_nc_ht=scontent.felp1-1.fna&oh=f228b8e0fe76adf14820a2e38caad463&oe=603EE18C",
+        "https://scontent.felp1-1.fna.fbcdn.net/v/t1.0-9/72870177_2494846527230009_7921490024061730816_n.jpg?_nc_cat=106&ccb=2&_nc_sid=8bfeb9&_nc_eui2=AeGH4mLGxJP1nv_JpNeHC76reQ236LFTrdd5DbfosVOt15IuEmI3C4z9vB4sL_WeX44&_nc_ohc=fFYRqJ-c22UAX-fqGqg&_nc_ht=scontent.felp1-1.fna&oh=b8fc10b4563392ce4c8e7db2555f4c6c&oe=604253E1"
     ];
 
     const responseChawi = Math.floor(Math.random() * fotosChawi.length);
