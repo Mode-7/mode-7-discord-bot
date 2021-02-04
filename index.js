@@ -182,11 +182,13 @@ client.on("message", (message) => {
     message.channel.messages.fetch({ limit: 2 }).then(res => {
         let previous = res.array()[0];
         let latest = res.array()[1];
+
+        for (let i = 0; i < res.array().length-1; i++) {
+            if (latest.content == previous.content) {
+                message.channel.send(`${latest.content}`);
+            }
+        }
     });
-    
-    if (latest.content == previous.content) {
-        message.channel.send(`${latest.content}`);
-    }
 });
 
 // client.login(config.token);
