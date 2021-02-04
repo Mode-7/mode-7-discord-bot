@@ -183,7 +183,7 @@ client.on("message", (message) => {
         let previous = res.array()[0];
         let latest = res.array()[1];
 
-        for (let i = 0; i < res.array().length-1; i++) {
+        for (let i = 0; i < res.array().length; i++) {
             if (latest.content == previous.content) {
                 message.channel.send(`${latest.content}`);
             }
