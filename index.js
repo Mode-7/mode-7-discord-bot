@@ -91,12 +91,15 @@ client.on("message", (message) => {
     }
 
     function comandosPrivados() {
-        if (command == "anunciar") {
-            let announcement = "";
-            for (const word in args) {
-                announcement = announcement + args[word] + " ";
-            }
-            webhookClient.send(announcement)
+        switch (command) {
+            case "anunciar":
+                let announcement = "";
+                for (const word in args) {
+                    announcement = announcement + args[word] + " ";
+                }
+                webhookClient.send(announcement)
+                break;
+            default:
         }
     }
 
