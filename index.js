@@ -76,6 +76,8 @@ client.on("message", (message) => {
                 message.channel.send(resultCoin);
             }
             coinFlip();
+        } else if (command == "agradecido") {
+            message.channel.send(`https://media.discordapp.net/attachments/700461949682712718/806689430005874718/2020-03-30_6-5-1.png`);
         }
     }
 
