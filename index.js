@@ -69,9 +69,9 @@ client.on("message", (message) => {
             message.channel.send(`El usuario más jugón es: ${user.user}`);
         } else if (command == "messirve") {
             message.channel.send(`https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
-        } else if (command == "volado") {
+        } else if (command == "pildora") {
             function coinFlip() {
-                var resultCoin = (Math.floor(Math.random() * 2) == 0) ? 'El resultado es CRUZ' : 'El resultado es CARA';
+                var resultCoin = (Math.floor(Math.random() * 2) == 0) ? 'https://i.imgur.com/2kqsZNk.png' : 'https://i.imgur.com/pEDmvdR.png';
                 message.channel.send(resultCoin);
             }
             coinFlip();
