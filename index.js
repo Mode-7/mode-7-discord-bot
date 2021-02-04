@@ -183,7 +183,7 @@ client.on("message", (message) => {
 
     const command = message.content;
 
-    channel.fetchMessages({ limit: 2 }).then(res => {
+    channel.messages.fetch({ limit: 2 }).then(res => {
         let lm = res.last();
         console.log(lm);
     });
