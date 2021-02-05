@@ -120,7 +120,12 @@ client.on("message", (message) => {
         "jugon",
         "jugona",
         "jugones",
-        "jugonas"
+        "jugonas",
+        "Jugón",
+        "Jugon",
+        "Jugona",
+        "Jugones",
+        "Jugonas"
     ];
 
     const respuestasJugon = [
@@ -146,49 +151,6 @@ client.on("message", (message) => {
     for (let i = 0; i < palabrasTrigger.length; i++) {
         if (command.includes(palabrasTrigger[i])) {
             message.channel.send(respuestasJugon[responseJugon]);
-            break;
-        }
-    }
-});
-
-// Comandos Marziito
-client.on("message", (message) => {
-    if (message.author.bot) return;
-
-    const palabrasTrigger = [
-        "marzo",
-        "marzito",
-        "marziito",
-        "kiub",
-        "malanndro"
-    ];
-
-    const respuestasMarziito = [
-        "¿que yo qué, puñetas?",
-        "la envidia es cabrona",
-        "meiyoras es el mejor zelda, cállense alv",
-        "solo vengo a que me insulten",
-        "está sobrevalorado, lo que siempre digo",
-        "no pueden ver a alguien exitoso",
-        "ya basta javier",
-        "amigo de todos, amigo de nadie",
-        "mario maker",
-        "soy básico",
-        "naruto está bien vergas",
-        "dragon ball está sobrevalorado",
-        "todo me aburre menos lo que hace adam sandler",
-        "marziito es con doble i",
-        "el online de nintendo no falla",
-        "ya no voy a jugar, me da ansiedad"
-    ];
-
-    const responseMarziito = Math.floor(Math.random() * respuestasMarziito.length);
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTrigger.length; i++) {
-        if (command.includes(palabrasTrigger[i])) {
-            message.channel.send(respuestasMarziito[responseMarziito]);
             break;
         }
     }
