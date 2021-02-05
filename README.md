@@ -2,7 +2,7 @@
 
 ![Mode 7 Logo](https://raw.githubusercontent.com/luiscarlospando/mode-7-discord-bot/master/assets/images/logo.jpg)
 
-Tu pequeño bot amigo, que vive en el Discord de [Mode 7 Podcast](https://discord.gg/N2m8gKw).
+Tu pequeño bot amigo, que vive en el Discord de [Mode 7](https://discord.gg/N2m8gKw).
 
 ## Lista de comandos
 
