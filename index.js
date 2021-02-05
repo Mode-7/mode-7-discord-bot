@@ -86,6 +86,9 @@ client.on("message", (message) => {
             case "agradecido":
                 message.channel.send(`https://i.imgur.com/ASnDi7B.png`);
                 break;
+            case "nopos":
+                message.channel.send(`https://i.imgflip.com/4wugny.jpg`);
+                break;
             default:
         }
     }
