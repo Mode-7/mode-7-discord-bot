@@ -164,22 +164,22 @@ client.on("message", (message) => {
     ];
 
     const respuestasMarziito = [
-        "¿que yo qué, puñetas? <:marzo:807012092876029972>",
-        "la envidia es cabrona <:marzo:807012092876029972>",
-        "meiyoras es el mejor zelda, cállense alv <:marzo:807012092876029972>",
-        "solo vengo a que me insulten <:marzo:807012092876029972>",
-        "está sobrevalorado, lo que siempre digo <:marzo:807012092876029972>",
-        "no pueden ver a alguien exitoso <:marzo:807012092876029972>",
-        "ya basta javier <:marzo:807012092876029972>",
-        "amigo de todos, amigo de nadie <:marzo:807012092876029972>",
-        "mario maker <:marzo:807012092876029972>",
-        "soy básico <:marzo:807012092876029972>",
-        "naruto está bien vergas <:marzo:807012092876029972>",
-        "dragon ball está sobrevalorado <:marzo:807012092876029972>",
-        "todo me aburre menos lo que hace adam sandler <:marzo:807012092876029972>",
-        "marziito es con doble i <:marzo:807012092876029972>",
-        "el online de nintendo no falla <:marzo:807012092876029972>",
-        "ya no voy a jugar, me da ansiedad <:marzo:807012092876029972>"
+        "¿que yo qué, puñetas?",
+        "la envidia es cabrona",
+        "meiyoras es el mejor zelda, cállense alv",
+        "solo vengo a que me insulten",
+        "está sobrevalorado, lo que siempre digo",
+        "no pueden ver a alguien exitoso",
+        "ya basta javier",
+        "amigo de todos, amigo de nadie",
+        "mario maker",
+        "soy básico",
+        "naruto está bien vergas",
+        "dragon ball está sobrevalorado",
+        "todo me aburre menos lo que hace adam sandler",
+        "marziito es con doble i",
+        "el online de nintendo no falla",
+        "ya no voy a jugar, me da ansiedad"
     ];
 
     const responseMarziito = Math.floor(Math.random() * respuestasMarziito.length);
@@ -208,7 +208,7 @@ client.on("message", (message) => {
 // Mode 7 Grand Prix
 let recordarM7GP = new cron.CronJob('00 30 8 * * 4', () => {
     let mariokartChannel = client.channels.cache.get(mariokartChannelID);
-    mariokartChannel.send(`¿Ya listos para el #M7GP de hoy mis jugones? <:checkered_flag:807286064234233896> https://i.imgur.com/IaODJMn.gif`);
+    mariokartChannel.send(`¿Ya listos para el #M7GP de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
 }, null, false, 'America/Chihuahua');
 
 recordarM7GP.start();
