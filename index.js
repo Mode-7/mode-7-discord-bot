@@ -151,9 +151,12 @@ client.on("message", (message) => {
         "los pelijuegos no cuentan",
         "¿a ver la boleta? 👀",
         "puro free to play, así que chiste",
-        "¿andan jugones o qué?",
+        "¿andamos jugones o qué?",
         "la pura crema y nata jugona aquí",
-        "yo si te saco los negros más negros"
+        "yo si te saco los negros más negros",
+        "Lord Jugón",
+        "jugón se nace, no se hace",
+        "pura frase jugona ustedes, se pasan chavos"
     ];
 
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
