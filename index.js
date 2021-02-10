@@ -215,7 +215,7 @@ client.on("message", (message) => {
         "Pues no que tan jugones? Ya nadie me siguio el mame!"
     ];
     
-    const respuestaPos = Math.floor(Math.random() * respuestasJugon.length);
+    const respuestaPos = Math.floor(Math.random() * respuestasCooldown.length);
     
     message.channel.messages.fetch({ limit: 2 }).then(messages => {
         let previous = messages.array()[0];
