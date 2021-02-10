@@ -21,6 +21,10 @@ const jugonLeyendaRolID = '806620208705568768'; // Rol de Jugón Leyenda
 // Prefijo para comandos
 const prefix = process.env.PREFIX;
 
+// Condiciones para MAME
+const limitador = 0; // Si se quiere poner un limite de mensajes que pone el bot
+var contadorInterno = 0; 
+
 // Bot listo
 client.once("ready", () => {
     console.log("Estoy listo.");
@@ -207,12 +211,37 @@ recordarM7CTR.start();
 
 // Obtener últimos dos mensajes, comparar y empezar el mame
 client.on("message", (message) => {
+    const respuestasCooldown = [
+        "Pues no que tan jugones? Ya nadie me siguio el mame!"
+    ];
+    
+    const respuestaPos = Math.floor(Math.random() * respuestasJugon.length);
+    
     message.channel.messages.fetch({ limit: 2 }).then(messages => {
         let previous = messages.array()[0];
         let latest = messages.array()[1];
 
-        if (latest.content == previous.content) {
-            message.channel.send(`${latest.content}`);
+        if (latest.content == previous.content && (latest.author.id != previous.author.id || latest.author.bot == previous.author.bot)) {
+            if(limitador > 0){
+                if(contadorInterno < limitador){
+                    message.channel.send(`${latest.content}`);
+                    contadorInterno++;
+                    if(latest.author.id != previous.author.id){
+                        // Alguien le siguio al mame, se reinicia Contador
+                        contadorInterno = 0;
+                    }
+                }else{
+                    // Bot cooldown
+                    message.channel.send(respuestasCooldown[respuestaPos]);
+                    contadorInterno = 0;
+                }
+            }else{
+                message.channel.send(`${latest.content}`);
+            }
+        }else{
+            //Se termino el mame
+            message.channel.send(respuestasCooldown[respuestaPos]);
+            contadorInterno = 0;
         }
     });
 });
