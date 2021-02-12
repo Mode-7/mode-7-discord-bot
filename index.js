@@ -6,6 +6,7 @@ const client = new Discord.Client();
 const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.env.WEBHOOK_TOKEN);
 
 // IDs de canales
+const announcementChannelID = '741028008361721866'; // Canal de anuncios
 const welcomeChannelID = '741028008361721866'; // Canal de bienvenida
 const rulesChannelID = '479304179102384128'; // Canal de reglas
 const generalChannelID = '478782494666129419'; // Canal general
@@ -214,6 +215,18 @@ client.on("message", (message) => {
         if (latest.content == previous.content) {
             message.channel.send(`${latest.content}`);
         }
+    });
+});
+
+// Le cae Marzito de aguafiestas
+client.on("message", (message) => {
+    let announcementChannel = client.channels.cache.get(announcementChannelID);
+
+    announcementChannel.channel.messages.fetch({ limit: 1 }).then(messages => {
+        let message = messages.array()[0];
+        console.log(message);
+
+
     });
 });
 
