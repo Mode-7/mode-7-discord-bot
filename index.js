@@ -6,7 +6,7 @@ const client = new Discord.Client();
 const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.env.WEBHOOK_TOKEN);
 
 // IDs de canales
-const announcementChannelID = '741028008361721866'; // Canal de anuncios
+const announcementChannelID = '664249693601267743'; // Canal de anuncios
 const welcomeChannelID = '741028008361721866'; // Canal de bienvenida
 const rulesChannelID = '479304179102384128'; // Canal de reglas
 const generalChannelID = '478782494666129419'; // Canal general
