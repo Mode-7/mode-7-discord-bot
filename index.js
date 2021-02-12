@@ -222,12 +222,11 @@ client.on("message", (message) => {
 client.on("message", (message) => {
     let announcementChannel = client.channels.cache.get(announcementChannelID);
 
-    announcementChannel.channel.messages.fetch({ limit: 1 }).then(messages => {
-        let message = messages.array()[0];
-        console.log(message);
+    if (message.channel.id == announcementChannel) {
+        if (message.author.bot) return;
 
-
-    });
+        announcementChannel.send(`https://i.imgur.com/PpkWAud.png`);
+    }
 });
 
 // client.login(config.token);
