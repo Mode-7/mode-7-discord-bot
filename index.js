@@ -220,12 +220,10 @@ client.on("message", (message) => {
 
 // Le cae Marzito de aguafiestas
 client.on("message", (message) => {
-    let announcementChannel = client.channels.cache.get(announcementChannelID);
-
-    if (message.channel.id == announcementChannel) {
+    if (message.channel.id == announcementChannelID) {
         if (message.author.bot) return;
 
-        announcementChannel.send(`https://i.imgur.com/PpkWAud.png`);
+        message.channel.send(`https://i.imgur.com/PpkWAud.png`);
     }
 });
 
