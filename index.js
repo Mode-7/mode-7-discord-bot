@@ -99,6 +99,9 @@ client.on("message", (message) => {
             case "nopos":
                 message.channel.send(`https://i.imgflip.com/4wugny.jpg`);
                 break;
+            case "boiler":
+                message.channel.send(`https://cdn.discordapp.com/attachments/478782450806292481/812162915674488863/8d7575fecdf184d33f258a3abcfe691a.png`);
+                break;
             default:
         }
     }
