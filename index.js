@@ -244,7 +244,7 @@ client.on("message", (message) => {
 
     for (let i = 0; i < palabrasTrigger.length; i++) {
         if (command.includes(palabrasTrigger[i])) {
-            message.channel.send('https://cdn.discordapp.com/attachments/805686698892853269/816721051235909702/pala.png');
+            message.channel.send('https://i.imgur.com/AmxiHj1.png');
             break;
         }
     }
