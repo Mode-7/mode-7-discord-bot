@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const cron = require("cron");
-// const config = require("./config.json"); // No necesitamos este archivo al hacer deply en Heroku
+// const config = require("./config.json"); // No necesitamos este archivo al hacer deploy en Heroku
 
 const client = new Discord.Client();
 const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.env.WEBHOOK_TOKEN);
@@ -228,6 +228,25 @@ client.on("message", (message) => {
         if (message.author.bot) return;
 
         message.channel.send(`https://i.imgur.com/PpkWAud.png`);
+    }
+});
+
+// Autoresponse PALA
+client.on("message", (message) => {
+    if (message.author.bot) return;
+
+    const palabrasTrigger = [
+        "facebook",
+        "Facebook"
+    ];
+
+    const command = message.content;
+
+    for (let i = 0; i < palabrasTrigger.length; i++) {
+        if (command.includes(palabrasTrigger[i])) {
+            message.channel.send('https://cdn.discordapp.com/attachments/805686698892853269/816721051235909702/pala.png');
+            break;
+        }
     }
 });
 
