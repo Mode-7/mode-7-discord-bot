@@ -188,7 +188,7 @@ client.on("message", (message) => {
 });
 
 // Buenos días Mode 7
-let buenosDiasMode7 = new cron.CronJob('00 48 9 * * *', () => {
+let buenosDiasMode7 = new cron.CronJob('00 00 7 * * *', () => {
     const imagenesBuenosDias = [
         "https://i.imgur.com/Ix4QCXt.jpg",
         "https://i.imgur.com/YK4c25w.jpg",
