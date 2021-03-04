@@ -188,7 +188,7 @@ client.on("message", (message) => {
 });
 
 // Buenos días Mode 7
-let buenosDiasMode7 = new cron.CronJob('00 43 9 * * *', () => {
+let buenosDiasMode7 = new cron.CronJob('00 44 9 * * *', () => {
     const imagenesBuenosDias = [
         "https://i.imgur.com/Ix4QCXt.jpg",
         "https://i.imgur.com/YK4c25w.jpg",
@@ -210,7 +210,7 @@ let buenosDiasMode7 = new cron.CronJob('00 43 9 * * *', () => {
     generalChannel.send(imagenesBuenosDias[responseBuenosDias]);
 }, null, false, 'America/Chihuahua');
 
-recordarM7GP.start();
+buenosDiasMode7.start();
 
 let flyerM7GP = new cron.CronJob('00 00 11 * * 4', () => {
     let mariokartChannel = client.channels.cache.get(mariokartChannelID);
