@@ -204,9 +204,7 @@ let buenosDiasMode7 = new cron.CronJob('00 00 7 * * *', () => {
     ];
 
     const responseBuenosDias = Math.floor(Math.random() * imagenesBuenosDias.length);
-
     let generalChannel = client.channels.cache.get(generalChannelID);
-
     generalChannel.send(imagenesBuenosDias[responseBuenosDias]);
 }, null, false, 'America/Chihuahua');
 
