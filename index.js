@@ -202,7 +202,7 @@ let buenosDiasMode7 = new cron.CronJob('00 00 7 * * *', () => {
         "https://i.imgur.com/GVGnorT.jpg",
         "https://i.imgur.com/lEFOLdu.jpg",
         "https://i.imgur.com/pDcNHy4.jpg",
-        "Buenos días a todos, en especial, al tío ☢⬆YOHI⬇☢",
+        "Buenos días a todos, en especial, al tío ☢⬆YOHI⬇☢"
     ];
 
     const responseBuenosDias = Math.floor(Math.random() * imagenesBuenosDias.length);
