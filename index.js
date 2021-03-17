@@ -161,7 +161,8 @@ client.on("message", (message) => {
         "Lord Jugón",
         "jugón se nace, no se hace",
         "pura frase jugona ustedes, se pasan chavos",
-        "ahora si que el <:pri:733044345262964837> porteó más"
+        "ahora si que el <:pri:733044345262964837> porteó más",
+        "ah prre"
     ];
 
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
