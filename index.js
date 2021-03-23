@@ -237,7 +237,7 @@ let recordarM7CTR = new cron.CronJob('00 30 8 * * 2', () => {
 recordarM7CTR.start();
 
 // Obtener últimos dos mensajes, comparar y empezar el mame
-/**client.on("message", (message) => {
+lient.on("message", (message) => {
     message.channel.messages.fetch({ limit: 2 }).then(messages => {
         let previous = messages.array()[0];
         let latest = messages.array()[1];
@@ -246,7 +246,7 @@ recordarM7CTR.start();
             message.channel.send(`${latest.content}`);
         }
     });
-});**/
+});
 
 // Le cae Marzito de aguafiestas
 client.on("message", (message) => {
