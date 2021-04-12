@@ -163,6 +163,19 @@ client.on("message", (message) => {
         "pura frase jugona ustedes, se pasan chavos",
         "ahora si que el <:pri:733044345262964837> porteó más",
         "ah prre",
+        "súper jugón",
+        "jugones, los quiero",
+        "jugón aspiro a ser",
+        "antes jugón que traer morrita, la neta",
+        "jugón, priísta e infiel, ¿qué más quieres mi reina?",
+        "detecto una alta cantidad ",
+        "hay tiempos de jugar y tiempos de callar",
+        "a ningún jugón le amarga un fifita",
+        "ves que el vato es jugón y le das free fire",,
+        "jugando y meando pa' hacer charco",
+        "no se puede chiflar y ganar en el fortnite al mismo tiempo",
+        "¡ni que fueran enchiladas, prro!",
+        "¿lo quieres peladito y en la boca=",
         "https://i.imgur.com/6fHfar4.png"
     ];
 
