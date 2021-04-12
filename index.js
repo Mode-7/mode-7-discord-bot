@@ -168,7 +168,7 @@ client.on("message", (message) => {
         "jugón aspiro a ser",
         "antes jugón que traer morrita, la neta",
         "jugón, priísta e infiel, ¿qué más quieres mi reina?",
-        "detecto una alta cantidad ",
+        "detecto una alta cantidad de jugonería aquí",
         "hay tiempos de jugar y tiempos de callar",
         "a ningún jugón le amarga un fifita",
         "ves que el vato es jugón y le das free fire",,
