@@ -175,7 +175,7 @@ client.on("message", (message) => {
         "jugando y meando pa' hacer charco",
         "no se puede chiflar y ganar en el fortnite al mismo tiempo",
         "¡ni que fueran enchiladas, prro!",
-        "¿lo quieres peladito y en la boca=",
+        "¿lo quieres peladito y en la boca?",
         "https://i.imgur.com/6fHfar4.png"
     ];
 
