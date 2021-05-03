@@ -20,6 +20,9 @@ const jugonActivoRolID = '728027086157119639'; // Rol de Jugón Activo
 const jugonSemiActivoRolID = '806620222228398122'; // Rol de Jugón Semi Activo
 const jugonLeyendaRolID = '806620208705568768'; // Rol de Jugón Leyenda
 
+// IDs de ciertos usuarios
+const JULZ_USER_ID = '426098208708624384';
+
 // Prefijo para comandos
 const prefix = process.env.PREFIX;
 
@@ -297,9 +300,7 @@ client.on("message", (message) => {
     if (message.channel.id == comidaChannelID) {
         if (message.author.bot) return;
 
-        const command = message.content;
-
-        if (command === "@Julz" || command === "@julz") {
+        if (message.mentions.users.some((user) => user.id === JULZ_USER_ID)) {
             message.channel.send('https://i.imgur.com/c4ImBHD.jpg');
         }
     }
