@@ -10,6 +10,7 @@ const announcementChannelID = '664249693601267743'; // Canal de anuncios
 const welcomeChannelID = '741028008361721866'; // Canal de bienvenida
 const rulesChannelID = '479304179102384128'; // Canal de reglas
 const generalChannelID = '478782494666129419'; // Canal general
+const comidaChannelID = '602245119344902144'; // Canal de comida
 const mariokartChannelID = '478782450806292481'; // Canal Mario Kart
 const ctrChannelID = '731357870364295198'; // Canal Crash Team Racing
 
@@ -293,20 +294,22 @@ client.on("message", (message) => {
 
 // Julz is in da house
 client.on("message", (message) => {
-    if (message.author.bot) return;
+    if (message.channel.id == comidaChannelID) {
+        if (message.author.bot) return;
 
-    const palabrasTrigger = [
-        "julz",
-        "Julz",
-        "JULZ"
-    ];
+        const palabrasTrigger = [
+            "julz",
+            "Julz",
+            "JULZ"
+        ];
 
-    const command = message.content;
+        const command = message.content;
 
-    for (let i = 0; i < palabrasTrigger.length; i++) {
-        if (command.includes(palabrasTrigger[i])) {
-            message.channel.send('https://i.imgur.com/c4ImBHD.jpg');
-            break;
+        for (let i = 0; i < palabrasTrigger.length; i++) {
+            if (command.includes(palabrasTrigger[i])) {
+                message.channel.send('https://i.imgur.com/c4ImBHD.jpg');
+                break;
+            }
         }
     }
 });
