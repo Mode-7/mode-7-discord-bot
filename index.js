@@ -297,17 +297,10 @@ client.on("message", (message) => {
     if (message.channel.id == comidaChannelID) {
         if (message.author.bot) return;
 
-        const palabrasTrigger = [
-            "@Julz"
-        ];
-
         const command = message.content;
 
-        for (let i = 0; i < palabrasTrigger.length; i++) {
-            if (command.includes(palabrasTrigger[i])) {
-                message.channel.send('https://i.imgur.com/c4ImBHD.jpg');
-                break;
-            }
+        if (command === "@Julz" || command === "@julz") {
+            message.channel.send('https://i.imgur.com/c4ImBHD.jpg');
         }
     }
 });
