@@ -298,9 +298,7 @@ client.on("message", (message) => {
         if (message.author.bot) return;
 
         const palabrasTrigger = [
-            "julz",
-            "Julz",
-            "JULZ"
+            "@Julz"
         ];
 
         const command = message.content;
