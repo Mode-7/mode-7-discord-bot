@@ -291,5 +291,25 @@ client.on("message", (message) => {
     }
 });
 
+// Julz is in da house
+client.on("message", (message) => {
+    if (message.author.bot) return;
+
+    const palabrasTrigger = [
+        "julz",
+        "Julz",
+        "JULZ"
+    ];
+
+    const command = message.content;
+
+    for (let i = 0; i < palabrasTrigger.length; i++) {
+        if (command.includes(palabrasTrigger[i])) {
+            message.channel.send('https://i.imgur.com/c4ImBHD.jpg');
+            break;
+        }
+    }
+});
+
 // client.login(config.token);
 client.login(process.env.BOT_TOKEN); // BOT_TOKEN es el Config Var creado en Heroku
