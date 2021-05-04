@@ -354,7 +354,7 @@ client.on("message", (message) => {
 
         for (let i = 0; i < palabrasTrigger.length; i++) {
             if (command.includes(palabrasTrigger[i])) {
-                message.channel.send('https://i.imgur.com/AmxiHj1.png');
+                message.channel.send('https://i.imgur.com/c4ImBHD.jpg');
                 break;
             }
         }
