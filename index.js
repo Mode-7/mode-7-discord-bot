@@ -296,12 +296,34 @@ client.on("message", (message) => {
 });
 
 // Julz is in da house
+// client.on("message", (message) => {
+//     if (message.channel.id == comidaChannelID) {
+//         if (message.author.bot) return;
+
+//         if (message.mentions.users.some((user) => user.id === JULZ_USER_ID)) {
+//             message.channel.send('https://i.imgur.com/c4ImBHD.jpg');
+//         }
+//     }
+// });
+
 client.on("message", (message) => {
     if (message.channel.id == comidaChannelID) {
         if (message.author.bot) return;
 
-        if (message.mentions.users.some((user) => user.id === JULZ_USER_ID)) {
-            message.channel.send('https://i.imgur.com/c4ImBHD.jpg');
+        const palabrasTrigger = [
+            "julz",
+            "Julz",
+            "@julz",
+            "@Julz"
+        ];
+
+        const command = message.content;
+
+        for (let i = 0; i < palabrasTrigger.length; i++) {
+            if (command.includes(palabrasTrigger[i])) {
+                message.channel.send('https://i.imgur.com/AmxiHj1.png');
+                break;
+            }
         }
     }
 });
