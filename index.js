@@ -295,6 +295,39 @@ client.on("message", (message) => {
     }
 });
 
+// Comandos hermabot
+client.on("message", (message) => {
+    if (message.author.bot) return;
+
+    const palabrasTrigger = [
+        "hermabot",
+        "Hermabot",
+        "HERMABOT"
+    ];
+
+    const respuestasJugon = [
+        "¿qué pedo, yo qué?",
+        "¿quién me habla?",
+        "hermabot, hermano, ya eres mexicano",
+        "¿qué pasó?",
+        "¿qué onda, qué onda?",
+        "soy Suave",
+        "tuuuuut",
+        "¿qué tranza prros?"
+    ];
+
+    const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
+
+    const command = message.content;
+
+    for (let i = 0; i < palabrasTrigger.length; i++) {
+        if (command.includes(palabrasTrigger[i])) {
+            message.channel.send(respuestasJugon[responseJugon]);
+            break;
+        }
+    }
+});
+
 // Julz is in da house
 // client.on("message", (message) => {
 //     if (message.channel.id == comidaChannelID) {
