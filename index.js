@@ -69,7 +69,7 @@ client.once("ready", async () => {
                     data: {
                         type: 4,
                         data: {
-                            content: `¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`
+                            content: `¡Holi!`
                         },
                     },
                 });
