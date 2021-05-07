@@ -48,7 +48,8 @@ const getApp = (guildId) => {
 client.once("ready", async () => {
     console.log("Estoy listo.");
 
-    const commands = await getApp(guildId).commands.get(); // Regresa todos los comandos (de este guildId en particular)
+    // Regresa todos los comandos (de este guildId en particular)
+    const commands = await getApp(guildId).commands.get();
     console.log(commands);
 
     // Comandos
@@ -59,23 +60,37 @@ client.once("ready", async () => {
         },
     });
 
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'messirve',
+            description: 'Usa este comando cuando te sirva algo.'
+        },
+    });
+
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
         const command = interaction.data.name.toLowerCase();
 
         switch (command) {
             case "hola":
-                client.api.interactions(interaction.id, interaction.token).callback.post({
-                    data: {
-                        type: 4,
-                        data: {
-                            content: `¡Holi!`
-                        },
-                    },
-                });
+                reply(interaction, `¡Holi!`);
+                break;
+            case "messirve":
+                message.channel.send(`https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
                 break;
             default:
         }
-    })
+    });
+
+    const reply = (interaction, response) => {
+        client.api.interactions(interaction.id, interaction.token).callback.post({
+            data: {
+                type: 4,
+                data: {
+                    content: response
+                },
+            },
+        });
+    }
 });
 
 // Bienvenida usuarios
@@ -134,9 +149,9 @@ client.on("message", (message) => {
                 let user = message.guild.members.cache.random();
                 message.channel.send(`El usuario más jugón es: ${user.user}`);
                 break;
-            case "messirve":
-                message.channel.send(`https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
-                break;
+            // case "messirve":
+            //     message.channel.send(`https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
+            //     break;
             case "pildora":
                 function coinFlip() {
                     let resultCoin = (Math.floor(Math.random() * 2) == 0) ? 'https://i.imgur.com/2kqsZNk.png' : 'https://i.imgur.com/pEDmvdR.png';
