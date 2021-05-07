@@ -6,7 +6,7 @@ const client = new Discord.Client();
 const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.env.WEBHOOK_TOKEN);
 
 // ID del GUILD
-guildId = '478777821087662092'; // ID del GUILD
+guildId = process.env.GUILD_ID; // ID del GUILD
 
 // IDs de canales
 const announcementChannelId = '664249693601267743'; // Canal de anuncios
