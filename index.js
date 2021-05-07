@@ -75,7 +75,7 @@ client.once("ready", async () => {
                 reply(interaction, `¡Holi!`);
                 break;
             case "messirve":
-                message.channel.send(`https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
+                reply(interaction, `https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
                 break;
             default:
         }
