@@ -6,7 +6,7 @@ const client = new Discord.Client();
 const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.env.WEBHOOK_TOKEN);
 
 // ID del GUILD
-guildID = '478777821087662092'; // ID del GUILD
+guildId = '478777821087662092'; // ID del GUILD
 
 // IDs de canales
 const announcementChannelId = '664249693601267743'; // Canal de anuncios
@@ -18,20 +18,46 @@ const mariokartChannelId = '478782450806292481'; // Canal Mario Kart
 // const ctrChannelId = '731357870364295198'; // Canal Crash Team Racing
 
 // IDs de roles
-const jugonNovatoRolID = '806620168939503636'; // Rol de Jugón Novato
-const jugonActivoRolID = '728027086157119639'; // Rol de Jugón Activo
-const jugonSemiActivoRolID = '806620222228398122'; // Rol de Jugón Semi Activo
-const jugonLeyendaRolID = '806620208705568768'; // Rol de Jugón Leyenda
+const jugonNovatoRolId = '806620168939503636'; // Rol de Jugón Novato
+const jugonActivoRolId = '728027086157119639'; // Rol de Jugón Activo
+const jugonSemiActivoRolId = '806620222228398122'; // Rol de Jugón Semi Activo
+const jugonLeyendaRolId = '806620208705568768'; // Rol de Jugón Leyenda
 
 // IDs de ciertos usuarios
-const JULZ_USER_ID = '426098208708624384';
+const julzUserId = '426098208708624384';
 
 // Prefijo para comandos
 const prefix = process.env.PREFIX;
 
 // Bot listo
-client.once("ready", () => {
+// client.once("ready", () => {
+//     console.log("Estoy listo.");
+// });
+
+// Bot listo y Comandos Slash
+const getApp = (guildId) => {
+    const app = client.api.applications(client.user.id);
+
+    if (guildId) {
+        app.guilds(guildId)
+    }
+
+    return app;
+}
+
+client.once("ready", async () => {
     console.log("Estoy listo.");
+
+    const commands = await getApp(guildId).commands.get(); // Regresa todos los comandos (de este guildId en particular)
+    console.log(commands);
+
+    // Comandos
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'hola',
+            description: 'Usa este comando para recibir un saludo del Mode 7 Bot.'
+        },
+    });
 });
 
 // Bienvenida usuarios
@@ -336,7 +362,7 @@ client.on("message", (message) => {
 //     if (message.channel.id == comidaChannelId) {
 //         if (message.author.bot) return;
 
-//         if (message.mentions.users.some((user) => user.id === JULZ_USER_ID)) {
+//         if (message.mentions.users.some((user) => user.id === julzUserId)) {
 //             message.channel.send('https://i.imgur.com/c4ImBHD.jpg');
 //         }
 //     }
