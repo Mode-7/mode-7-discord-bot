@@ -200,8 +200,8 @@ client.on("message", (message) => {
     const args = commandBody.split(' ');
     const command = args.shift().toLowerCase();
 
-    function comandosPublicos() {
-        switch (command) {
+    // function comandosPublicos() {
+        // switch (command) {
             // case "hola":
             //     const timeTaken = Date.now() - message.createdTimestamp;
             //     message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
@@ -235,9 +235,9 @@ client.on("message", (message) => {
             // case "boiler":
             //     message.channel.send(`https://cdn.discordapp.com/attachments/478782450806292481/812162915674488863/8d7575fecdf184d33f258a3abcfe691a.png`);
             //     break;
-            default:
-        }
-    }
+            // default:
+        // }
+    // }
 
     function comandosPrivados() {
         switch (command) {
