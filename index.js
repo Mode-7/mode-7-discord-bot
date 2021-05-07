@@ -122,7 +122,7 @@ client.once("ready", async () => {
                 break;
             case "encuentra":
                 const randomUser = client.users.cache.random();
-                reply(interaction, `El usuario más jugón es: ${randomUser.user}`);
+                reply(interaction, `Ahorita el usuario más jugón de Mode 7 es: ${randomUser}`);
                 break;
             case "messirve":
                 reply(interaction, `https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
