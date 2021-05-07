@@ -253,9 +253,9 @@ client.on("message", (message) => {
     }
 
     if (!message.member.roles.cache.has(process.env["ANNOUNCER_ROLE"])) {
-        comandosPublicos();
+        // comandosPublicos();
     } else {
-        comandosPublicos();
+        // comandosPublicos();
         comandosPrivados();
     }               
 });
