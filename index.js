@@ -121,8 +121,8 @@ client.once("ready", async () => {
                 reply(interaction, `<:uwu:806331721754214411>`);
                 break;
             case "encuentra":
-                let user = message.guild.members.cache.random();
-                reply(interaction, `El usuario más jugón es: ${user.user}`);
+                let user2 = message.guild.members.cache.random();
+                reply(interaction, `El usuario más jugón es: ${user2.user}`);
                 break;
             case "messirve":
                 reply(interaction, `https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
