@@ -127,7 +127,7 @@ client.once("ready", async () => {
                 reply(interaction, `https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
                 break;
             case "pildora":
-                function coinFlip() {
+                let coinFlip = () => {
                     let resultCoin = (Math.floor(Math.random() * 2) == 0) ? 'https://i.imgur.com/2kqsZNk.png' : 'https://i.imgur.com/pEDmvdR.png';
                     reply(interaction, resultCoin);
                 }
