@@ -58,6 +58,25 @@ client.once("ready", async () => {
             description: 'Usa este comando para recibir un saludo del Mode 7 Bot.'
         },
     });
+
+    client.ws.on('INTERACTION_CREATE', async (interaction) => {
+        const command = interaction.data.name.toLowerCase();
+
+        switch (command) {
+            case "hola":
+                const timeTaken = Date.now() - message.createdTimestamp;
+                client.api.interactions(interaction.id, interaction.token).callback.post({
+                    data: {
+                        type: 4,
+                        data: {
+                            content: `¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`
+                        },
+                    },
+                });
+                break;
+            default:
+        }
+    })
 });
 
 // Bienvenida usuarios
@@ -102,10 +121,10 @@ client.on("message", (message) => {
 
     function comandosPublicos() {
         switch (command) {
-            case "hola":
-                const timeTaken = Date.now() - message.createdTimestamp;
-                message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
-                break;
+            // case "hola":
+            //     const timeTaken = Date.now() - message.createdTimestamp;
+            //     message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
+            //     break;
             case "uwu":
                 message.reply(`<:uwu:806331721754214411>`);
                 break;
