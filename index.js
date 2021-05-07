@@ -114,7 +114,8 @@ client.once("ready", async () => {
 
         switch (command) {
             case "hola":
-                reply(interaction, `¡Holi!`);
+                const user = client.users.cache.get(interaction.member.user.id);
+                reply(interaction, `¡Holi! ${user}`);
                 break;
             case "uwu":
                 reply(interaction, `<:uwu:806331721754214411>`);
