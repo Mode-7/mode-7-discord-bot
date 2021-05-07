@@ -69,6 +69,13 @@ client.once("ready", async () => {
 
     await getApp(guildId).commands.post({
         data: {
+            name: 'encuentra',
+            description: 'Este comando te va a decir el miembro de Mode 7 más jugón del momento.'
+        },
+    });
+
+    await getApp(guildId).commands.post({
+        data: {
             name: 'messirve',
             description: 'Usa este comando cuando te sirva algo.'
         },
@@ -111,6 +118,10 @@ client.once("ready", async () => {
                 break;
             case "uwu":
                 reply(interaction, `<:uwu:806331721754214411>`);
+                break;
+            case "encuentra":
+                let user = message.guild.members.cache.random();
+                reply(interaction, `El usuario más jugón es: ${user.user}`);
                 break;
             case "messirve":
                 reply(interaction, `https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
@@ -200,10 +211,10 @@ client.on("message", (message) => {
             // case "chawi":
             //     message.channel.send(fotosChawi[responseChawi]);
             //     break;
-            case "encuentra":
-                let user = message.guild.members.cache.random();
-                message.channel.send(`El usuario más jugón es: ${user.user}`);
-                break;
+            // case "encuentra":
+            //     let user = message.guild.members.cache.random();
+            //     message.channel.send(`El usuario más jugón es: ${user.user}`);
+            //     break;
             // case "messirve":
             //     message.channel.send(`https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
             //     break;
