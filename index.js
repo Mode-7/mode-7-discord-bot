@@ -81,6 +81,27 @@ client.once("ready", async () => {
         },
     });
 
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'agradecido',
+            description: '¿Te sientes agradecido? Usa este comando entonces.'
+        },
+    });
+
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'nopos',
+            description: '¿Se acabó el tema de conversación? Este es el comando perfecto.'
+        },
+    });
+
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'boiler',
+            description: 'Solo los que le caen al Mode 7 Grand Prix saben la utilidad de este comando.'
+        },
+    });
+
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
         const command = interaction.data.name.toLowerCase();
 
@@ -101,10 +122,20 @@ client.once("ready", async () => {
                 }
                 coinFlip();
                 break;
+            case "agradecido":
+                reply(interaction, `https://i.imgur.com/ASnDi7B.png`);
+                break;
+            case "nopos":
+                reply(interaction, `https://i.imgflip.com/4wugny.jpg`);
+                break;
+            case "boiler":
+                reply(interaction, `https://cdn.discordapp.com/attachments/478782450806292481/812162915674488863/8d7575fecdf184d33f258a3abcfe691a.png`);
+                break;
             default:
         }
     });
 
+    // Método para que el bot conteste comandos
     const reply = (interaction, response) => {
         client.api.interactions(interaction.id, interaction.token).callback.post({
             data: {
@@ -183,15 +214,15 @@ client.on("message", (message) => {
             //     }
             //     coinFlip();
             //     break;
-            case "agradecido":
-                message.channel.send(`https://i.imgur.com/ASnDi7B.png`);
-                break;
-            case "nopos":
-                message.channel.send(`https://i.imgflip.com/4wugny.jpg`);
-                break;
-            case "boiler":
-                message.channel.send(`https://cdn.discordapp.com/attachments/478782450806292481/812162915674488863/8d7575fecdf184d33f258a3abcfe691a.png`);
-                break;
+            // case "agradecido":
+            //     message.channel.send(`https://i.imgur.com/ASnDi7B.png`);
+            //     break;
+            // case "nopos":
+            //     message.channel.send(`https://i.imgflip.com/4wugny.jpg`);
+            //     break;
+            // case "boiler":
+            //     message.channel.send(`https://cdn.discordapp.com/attachments/478782450806292481/812162915674488863/8d7575fecdf184d33f258a3abcfe691a.png`);
+            //     break;
             default:
         }
     }
