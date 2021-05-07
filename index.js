@@ -62,20 +62,19 @@ client.once("ready", async () => {
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
         const command = interaction.data.name.toLowerCase();
 
-        switch (command) {
-            case "hola":
-                const timeTaken = Date.now() - message.createdTimestamp;
-                client.api.interactions(interaction.id, interaction.token).callback.post({
+        if (command === 'hola') {
+            const timeTaken = Date.now() - message.createdTimestamp;
+            client.api.interactions(interaction.id, interaction.token).callback.post({
+                data: {
+                    type: 4,
                     data: {
-                        type: 4,
-                        data: {
-                            content: `¡Holi!`
-                        },
+                        content: `¡Holi!`
                     },
-                });
-                break;
-            default:
+                },
+            });
         }
+
+        
     })
 });
 
