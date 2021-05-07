@@ -62,6 +62,13 @@ client.once("ready", async () => {
 
     await getApp(guildId).commands.post({
         data: {
+            name: 'uwu',
+            description: 'Usa este comando para publicar un hermoso uwu.'
+        },
+    });
+
+    await getApp(guildId).commands.post({
+        data: {
             name: 'messirve',
             description: 'Usa este comando cuando te sirva algo.'
         },
@@ -73,6 +80,9 @@ client.once("ready", async () => {
         switch (command) {
             case "hola":
                 reply(interaction, `¡Holi!`);
+                break;
+            case "uwu":
+                reply(interaction, `<:duh:840277183654002771>`);
                 break;
             case "messirve":
                 reply(interaction, `https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
@@ -139,9 +149,9 @@ client.on("message", (message) => {
             //     const timeTaken = Date.now() - message.createdTimestamp;
             //     message.reply(`¡Holi! Me tomó ${timeTaken}ms darme cuenta de lo guapo que estás, bombón.`);
             //     break;
-            case "uwu":
-                message.reply(`<:uwu:806331721754214411>`);
-                break;
+            // case "uwu":
+            //     message.reply(`<:uwu:806331721754214411>`);
+            //     break;
             // case "chawi":
             //     message.channel.send(fotosChawi[responseChawi]);
             //     break;
