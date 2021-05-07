@@ -5,14 +5,17 @@ const cron = require("cron");
 const client = new Discord.Client();
 const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.env.WEBHOOK_TOKEN);
 
+// ID del GUILD
+guildID = '478777821087662092'; // ID del GUILD
+
 // IDs de canales
-const announcementChannelID = '664249693601267743'; // Canal de anuncios
-const welcomeChannelID = '741028008361721866'; // Canal de bienvenida
-const rulesChannelID = '479304179102384128'; // Canal de reglas
-const generalChannelID = '478782494666129419'; // Canal general
-const comidaChannelID = '602245119344902144'; // Canal de comida
-const mariokartChannelID = '478782450806292481'; // Canal Mario Kart
-const ctrChannelID = '731357870364295198'; // Canal Crash Team Racing
+const announcementChannelId = '664249693601267743'; // Canal de anuncios
+const welcomeChannelId = '741028008361721866'; // Canal de bienvenida
+const rulesChannelId = '479304179102384128'; // Canal de reglas
+const generalChannelId = '478782494666129419'; // Canal general
+const comidaChannelId = '602245119344902144'; // Canal de comida
+const mariokartChannelId = '478782450806292481'; // Canal Mario Kart
+// const ctrChannelId = '731357870364295198'; // Canal Crash Team Racing
 
 // IDs de roles
 const jugonNovatoRolID = '806620168939503636'; // Rol de Jugón Novato
@@ -35,8 +38,8 @@ client.once("ready", () => {
 client.on("guildMemberAdd", (member) => {
     console.log(member);
 
-    const welcomeText = `¡Bienvenid@  <@${member.id}>! 🎉 🤗\nAntes de comenzar, te pedimos leer las ${member.guild.channels.cache.get(rulesChannelID).toString()} y si necesitas ayuda con algo, puedes preguntar en ${member.guild.channels.cache.get(generalChannelID).toString()}.\n\nDisfruta de tu estancia en Mode 7.\n\nhttps://www.youtube.com/watch?v=o0kGvgXmmgk`
-    const channel = member.guild.channels.cache.get(welcomeChannelID);
+    const welcomeText = `¡Bienvenid@  <@${member.id}>! 🎉 🤗\nAntes de comenzar, te pedimos leer las ${member.guild.channels.cache.get(rulesChannelId).toString()} y si necesitas ayuda con algo, puedes preguntar en ${member.guild.channels.cache.get(generalChannelId).toString()}.\n\nDisfruta de tu estancia en Mode 7.\n\nhttps://www.youtube.com/watch?v=o0kGvgXmmgk`
+    const channel = member.guild.channels.cache.get(welcomeChannelId);
 
     channel.send(welcomeText);
 });
@@ -224,7 +227,7 @@ let buenosDiasMode7 = new cron.CronJob('00 00 7 * * *', () => {
     ];
 
     const responseBuenosDias = Math.floor(Math.random() * imagenesBuenosDias.length);
-    let generalChannel = client.channels.cache.get(generalChannelID);
+    let generalChannel = client.channels.cache.get(generalChannelId);
     generalChannel.send(imagenesBuenosDias[responseBuenosDias]);
 }, null, false, 'America/Chihuahua');
 
@@ -232,26 +235,26 @@ buenosDiasMode7.start();
 
 // Mode 7 Grand Prix
 let recordarM7GP = new cron.CronJob('00 30 8 * * 4', () => {
-    let mariokartChannel = client.channels.cache.get(mariokartChannelID);
+    let mariokartChannel = client.channels.cache.get(mariokartChannelId);
     mariokartChannel.send(`¿Ya listos para el #M7GP de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
 }, null, false, 'America/Chihuahua');
 
 recordarM7GP.start();
 
 let flyerM7GP = new cron.CronJob('00 00 11 * * 4', () => {
-    let mariokartChannel = client.channels.cache.get(mariokartChannelID);
+    let mariokartChannel = client.channels.cache.get(mariokartChannelId);
     mariokartChannel.send(`Y acuérdense de compartir el flyer y el código del torneo con sus compas.\n\nCódigo: 0746-6549-8155\nLink a este canal: https://discord.gg/U77J5c6\n\nhttps://i.imgur.com/2ljzcAj.png`);
 }, null, false, 'America/Chihuahua');
 
 flyerM7GP.start();
 
 // Mode 7 CTR
-let recordarM7CTR = new cron.CronJob('00 30 8 * * 2', () => {
-    let ctrChannel = client.channels.cache.get(ctrChannelID);
-    ctrChannel.send(`¿Ya listos para el desvergue de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
-}, null, false, 'America/Chihuahua');
+// let recordarM7CTR = new cron.CronJob('00 30 8 * * 2', () => {
+//     let ctrChannel = client.channels.cache.get(ctrChannelId);
+//     ctrChannel.send(`¿Ya listos para el desvergue de hoy mis jugones? https://i.imgur.com/IaODJMn.gif`);
+// }, null, false, 'America/Chihuahua');
 
-recordarM7CTR.start();
+// recordarM7CTR.start();
 
 // Obtener últimos dos mensajes, comparar y empezar el mame
 /*
@@ -269,7 +272,7 @@ client.on("message", (message) => {
 
 // Le cae Marzito de aguafiestas
 client.on("message", (message) => {
-    if (message.channel.id == announcementChannelID) {
+    if (message.channel.id == announcementChannelId) {
         if (message.author.bot) return;
 
         message.channel.send(`https://i.imgur.com/PpkWAud.png`);
@@ -330,7 +333,7 @@ client.on("message", (message) => {
 
 // Julz is in da house
 // client.on("message", (message) => {
-//     if (message.channel.id == comidaChannelID) {
+//     if (message.channel.id == comidaChannelId) {
 //         if (message.author.bot) return;
 
 //         if (message.mentions.users.some((user) => user.id === JULZ_USER_ID)) {
@@ -340,7 +343,7 @@ client.on("message", (message) => {
 // });
 
 client.on("message", (message) => {
-    if (message.channel.id == comidaChannelID) {
+    if (message.channel.id == comidaChannelId) {
         if (message.author.bot) return;
 
         const palabrasTrigger = [
