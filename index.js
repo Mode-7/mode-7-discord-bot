@@ -63,7 +63,6 @@ client.once("ready", async () => {
         const command = interaction.data.name.toLowerCase();
 
         if (command === 'hola') {
-            const timeTaken = Date.now() - message.createdTimestamp;
             client.api.interactions(interaction.id, interaction.token).callback.post({
                 data: {
                     type: 4,
