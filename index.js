@@ -74,6 +74,13 @@ client.once("ready", async () => {
         },
     });
 
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'pildora',
+            description: '¿Necesitas hacer un volado? Usa este comando para tomar una decisión.'
+        },
+    });
+
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
         const command = interaction.data.name.toLowerCase();
 
@@ -86,6 +93,13 @@ client.once("ready", async () => {
                 break;
             case "messirve":
                 reply(interaction, `https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
+                break;
+            case "pildora":
+                function coinFlip() {
+                    let resultCoin = (Math.floor(Math.random() * 2) == 0) ? 'https://i.imgur.com/2kqsZNk.png' : 'https://i.imgur.com/pEDmvdR.png';
+                    reply(interaction, resultCoin);
+                }
+                coinFlip();
                 break;
             default:
         }
@@ -162,13 +176,13 @@ client.on("message", (message) => {
             // case "messirve":
             //     message.channel.send(`https://media1.tenor.com/images/0ded3d37756b480d80ae4fadc8121eac/tenor.gif?itemid=17952557`);
             //     break;
-            case "pildora":
-                function coinFlip() {
-                    let resultCoin = (Math.floor(Math.random() * 2) == 0) ? 'https://i.imgur.com/2kqsZNk.png' : 'https://i.imgur.com/pEDmvdR.png';
-                    message.channel.send(resultCoin);
-                }
-                coinFlip();
-                break;
+            // case "pildora":
+            //     function coinFlip() {
+            //         let resultCoin = (Math.floor(Math.random() * 2) == 0) ? 'https://i.imgur.com/2kqsZNk.png' : 'https://i.imgur.com/pEDmvdR.png';
+            //         message.channel.send(resultCoin);
+            //     }
+            //     coinFlip();
+            //     break;
             case "agradecido":
                 message.channel.send(`https://i.imgur.com/ASnDi7B.png`);
                 break;
