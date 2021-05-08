@@ -492,22 +492,20 @@ client.on("message", (message) => {
 
 // Valiendo barriga
 client.on("message", (message) => {
-    if (message.channel.id == comidaChannelId) {
-        if (message.author.bot) return;
+    if (message.author.bot) return;
 
-        const palabrasTrigger = [
-            "valiendo barriga",
-            "Valiendo barriga",
-            "Valiendo Barriga"
-        ];
+    const palabrasTrigger = [
+        "valiendo barriga",
+        "Valiendo barriga",
+        "Valiendo Barriga"
+    ];
 
-        const command = message.content;
+    const command = message.content;
 
-        for (let i = 0; i < palabrasTrigger.length; i++) {
-            if (command.includes(palabrasTrigger[i])) {
-                message.channel.send('señor verga');
-                break;
-            }
+    for (let i = 0; i < palabrasTrigger.length; i++) {
+        if (command.includes(palabrasTrigger[i])) {
+            message.channel.send('señor verga');
+            break;
         }
     }
 });
