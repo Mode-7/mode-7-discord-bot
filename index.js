@@ -496,6 +496,7 @@ client.on("message", (message) => {
 
     const palabrasTrigger = [
         "valiendo barriga",
+        "valiendo Barriga",
         "Valiendo barriga",
         "Valiendo Barriga"
     ];
