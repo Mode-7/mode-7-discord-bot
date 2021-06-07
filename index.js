@@ -511,5 +511,26 @@ client.on("message", (message) => {
     }
 });
 
+// Si Dios quiere
+client.on("message", (message) => {
+    if (message.author.bot) return;
+
+    const palabrasTrigger = [
+        "si Dios quiere",
+        "si dios quiere",
+        "si Dios kiere",
+        "si dios kiere"
+    ];
+
+    const command = message.content;
+
+    for (let i = 0; i < palabrasTrigger.length; i++) {
+        if (command.includes(palabrasTrigger[i])) {
+            message.channel.send('https://i.imgur.com/F62Cn4E.jpg');
+            break;
+        }
+    }
+});
+
 // client.login(config.token);
 client.login(process.env.BOT_TOKEN); // BOT_TOKEN es el Config Var creado en Heroku
