@@ -519,7 +519,11 @@ client.on("message", (message) => {
         "si Dios quiere",
         "si dios quiere",
         "si Dios kiere",
-        "si dios kiere"
+        "si dios kiere",
+        "Si Dios quiere",
+        "Si dios quiere",
+        "Si Dios kiere",
+        "Si dios kiere"
     ];
 
     const command = message.content;
