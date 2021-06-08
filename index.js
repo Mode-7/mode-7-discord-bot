@@ -336,7 +336,7 @@ client.on("message", (message) => {
 });
 
 // Buenos días Mode 7
-let buenosDiasMode7 = new cron.CronJob('00 00 7 * * *', () => {
+let buenosDiasMode7 = new cron.CronJob('00 00 7 * * sun-thu', () => {
     const imagenesBuenosDias = [
         "https://i.imgur.com/Ix4QCXt.jpg",
         "https://i.imgur.com/YK4c25w.jpg",
@@ -358,6 +358,46 @@ let buenosDiasMode7 = new cron.CronJob('00 00 7 * * *', () => {
 }, null, false, 'America/Chihuahua');
 
 buenosDiasMode7.start();
+
+let buenosDiasMode7Friday = new cron.CronJob('00 00 7 * * fri', () => {
+    const imagenesBuenosDias = [
+        "https://i.imgur.com/sjq1GG3.gif",
+        "https://i.imgur.com/0vZSgYT.jpg",
+        "https://i.imgur.com/3VRfKBS.jpg",
+        "https://i.imgur.com/Fcrst4G.gifv",
+        "Feliz viernes prros, pásenla chido",
+        "TGIF 🥳🥳🥳"
+    ];
+
+    const responseBuenosDias = Math.floor(Math.random() * imagenesBuenosDias.length);
+    let generalChannel = client.channels.cache.get(generalChannelId);
+    generalChannel.send(imagenesBuenosDias[responseBuenosDias]);
+}, null, false, 'America/Chihuahua');
+
+buenosDiasMode7Friday.start();
+
+let buenosDiasMode7Wknd = new cron.CronJob('00 00 7 * * sat', () => {
+    const imagenesBuenosDias = [
+        "https://i.imgur.com/Ix4QCXt.jpg",
+        "https://i.imgur.com/YK4c25w.jpg",
+        "https://i.imgur.com/aXU1qlR.jpg",
+        "https://i.imgur.com/fhaRzth.jpg",
+        "https://i.imgur.com/cz6DExV.jpg",
+        "https://i.imgur.com/0mJq7mi.jpg",
+        "https://i.imgur.com/ae42GWg.jpg",
+        "https://i.imgur.com/hBuRXSv.jpg",
+        "https://i.imgur.com/GVGnorT.jpg",
+        "https://i.imgur.com/lEFOLdu.jpg",
+        "https://i.imgur.com/pDcNHy4.jpg",
+        "Buenos días a todos, en especial, al tío ☢⬆YOHI⬇☢"
+    ];
+
+    const responseBuenosDias = Math.floor(Math.random() * imagenesBuenosDias.length);
+    let generalChannel = client.channels.cache.get(generalChannelId);
+    generalChannel.send(imagenesBuenosDias[responseBuenosDias]);
+}, null, false, 'America/Chihuahua');
+
+buenosDiasMode7Wknd.start();
 
 // Mode 7 Grand Prix
 let recordarM7GP = new cron.CronJob('00 30 8 * * 4', () => {
