@@ -611,10 +611,11 @@ client.on("message", (message) => {
     ];
 
     const command = message.content;
+    const emojiMatatan = bot.emojis.cache.get("854053101292355644")M
 
     for (let i = 0; i < palabrasTrigger.length; i++) {
         if (command.includes(palabrasTrigger[i])) {
-            message.channel.send(<:matatan:854053101292355644>);
+            message.channel.send(`${emojiMatatan}`);
             break;
         }
     }
