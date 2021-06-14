@@ -614,7 +614,7 @@ client.on("message", (message) => {
 
     for (let i = 0; i < palabrasTrigger.length; i++) {
         if (command.includes(palabrasTrigger[i])) {
-            message.channel.send(`<:matatan:854053101292355644>`);
+            message.channel.send(<:matatan:854053101292355644>);
             break;
         }
     }
