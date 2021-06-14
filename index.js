@@ -551,6 +551,75 @@ client.on("message", (message) => {
     }
 });
 
+// Frases de Matatán
+client.on("message", (message) => {
+    if (message.author.bot) return;
+
+    const palabrasTrigger = [
+        "Hola, ¿cómo están?",
+        "hola, ¿cómo están?",
+        "Hola ¿cómo están?",
+        "hola ¿cómo están?",
+        "Hola, cómo están?",
+        "hola, cómo están?",
+        "Hola cómo están?",
+        "hola cómo están?",
+        "Hola cómo están",
+        "hola cómo están",
+        "Hola, ¿como están?",
+        "hola, ¿como están?",
+        "Hola ¿como están?",
+        "hola ¿como están?",
+        "Hola, como están?",
+        "hola, como están?",
+        "Hola como están?",
+        "hola como están?",
+        "Hola como están",
+        "hola como están",
+        "Hola, ¿cómo estan?",
+        "hola, ¿cómo estan?",
+        "Hola ¿cómo estan?",
+        "hola ¿cómo estan?",
+        "Hola, cómo estan?",
+        "hola, cómo estan?",
+        "Hola cómo estan?",
+        "hola cómo estan?",
+        "Hola cómo estan",
+        "hola cómo estan",
+        "Hola, ¿como estan?",
+        "hola, ¿como estan?",
+        "Hola ¿como esta?",
+        "hola ¿como estan?",
+        "Hola, como estan?",
+        "hola, como estan?",
+        "Hola como esta?",
+        "hola como estan?",
+        "Hola como estan",
+        "hola como estan",
+        "está en gamepass",
+        "Está en gamepass",
+        "está en game pass",
+        "Está en game pass",
+        "está en Game Pass",
+        "Está en Game Pass",
+        "esta en gamepass",
+        "Esta en gamepass",
+        "esta en game pass",
+        "Esta en game pass",
+        "esta en Game Pass",
+        "Esta en Game Pass"
+    ];
+
+    const command = message.content;
+
+    for (let i = 0; i < palabrasTrigger.length; i++) {
+        if (command.includes(palabrasTrigger[i])) {
+            message.channel.send(`<:matatan:854053101292355644>`);
+            break;
+        }
+    }
+});
+
 // Si Dios quiere
 client.on("message", (message) => {
     if (message.author.bot) return;
