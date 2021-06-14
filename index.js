@@ -588,11 +588,11 @@ client.on("message", (message) => {
         "hola cómo estan",
         "Hola, ¿como estan?",
         "hola, ¿como estan?",
-        "Hola ¿como esta?",
+        "Hola ¿como estan?",
         "hola ¿como estan?",
         "Hola, como estan?",
         "hola, como estan?",
-        "Hola como esta?",
+        "Hola como estan?",
         "hola como estan?",
         "Hola como estan",
         "hola como estan",
@@ -611,11 +611,10 @@ client.on("message", (message) => {
     ];
 
     const command = message.content;
-    const emojiMatatan = bot.emojis.cache.get("854053101292355644");
 
     for (let i = 0; i < palabrasTrigger.length; i++) {
         if (command.includes(palabrasTrigger[i])) {
-            message.channel.send(`${emojiMatatan}`);
+            message.channel.send(':matatan:854053101292355644');
             break;
         }
     }
