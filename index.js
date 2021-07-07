@@ -607,7 +607,23 @@ client.on("message", (message) => {
         "esta en game pass",
         "Esta en game pass",
         "esta en Game Pass",
-        "Esta en Game Pass"
+        "Esta en Game Pass",
+        "están en gamepass",
+        "Están en gamepass",
+        "están en game pass",
+        "Están en game pass",
+        "están en Game Pass",
+        "Están en Game Pass",
+        "estan en gamepass",
+        "Estan en gamepass",
+        "estan en game pass",
+        "Estan en game pass",
+        "estan en Game Pass",
+        "Estan en Game Pass",
+        "bienvenidos una vez más",
+        "Bienvenidos una vez más",
+        "bienvenidos una vez mas",
+        "Bienvenidos una vez mas"
     ];
 
     const command = message.content;
