@@ -661,5 +661,30 @@ client.on("message", (message) => {
     }
 });
 
+// Puro pendejo usa Joycon
+client.on("message", (message) => {
+    if (message.author.bot) return;
+
+    const palabrasTrigger = [
+        "joycon",
+        "joy con",
+        "joycons",
+        "joy cons",
+        "Joycon",
+        "Joy Con",
+        "Joycons",
+        "Joy Cons"
+    ];
+
+    const command = message.content;
+
+    for (let i = 0; i < palabrasTrigger.length; i++) {
+        if (command.includes(palabrasTrigger[i])) {
+            message.channel.send('https://i.imgur.com/eHYWCPU.png');
+            break;
+        }
+    }
+});
+
 // client.login(config.token);
 client.login(process.env.BOT_TOKEN); // BOT_TOKEN es el Config Var creado en Heroku
