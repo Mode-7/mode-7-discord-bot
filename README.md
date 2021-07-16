@@ -1,4 +1,4 @@
-# Mode 7 Discord Bot
+# Mode 7 Bot
 
 ![Mode 7 Logo](https://raw.githubusercontent.com/luiscarlospando/mode-7-discord-bot/master/assets/images/logo.jpg)
 
