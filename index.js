@@ -666,12 +666,22 @@ client.on("message", (message) => {
     if (message.author.bot) return;
 
     const palabrasTrigger = [
+        "joy-con",
+        "Joy-con",
+        "Joy-Con",
+        "joy-Con",
+        "JOY-CON",
         "joycon",
+        "JOYCON",
         "joy con",
+        "JOY CON",
         "joycons",
+        "JOYCONS",
         "joy cons",
+        "JOY CONS",
         "Joycon",
         "Joy Con",
+        "JOY CON",
         "Joycons",
         "Joy Cons"
     ];
