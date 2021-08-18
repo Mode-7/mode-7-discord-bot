@@ -13,6 +13,7 @@ const announcementChannelId = '664249693601267743'; // Canal de anuncios
 const welcomeChannelId = '741028008361721866'; // Canal de bienvenida
 const rulesChannelId = '479304179102384128'; // Canal de reglas
 const generalChannelId = '478782494666129419'; // Canal general
+const offTopicChannelId = '875506827377381456'; // Canal off topic
 const comidaChannelId = '602245119344902144'; // Canal de comida
 const mariokartChannelId = '478782450806292481'; // Canal Mario Kart
 // const ctrChannelId = '731357870364295198'; // Canal Crash Team Racing
@@ -349,12 +350,22 @@ let buenosDiasMode7 = new cron.CronJob('00 00 7 * * sun-thu', () => {
         "https://i.imgur.com/GVGnorT.jpg",
         "https://i.imgur.com/lEFOLdu.jpg",
         "https://i.imgur.com/pDcNHy4.jpg",
+        "https://i.imgur.com/aPag9Uf.jpg",
+        "https://i.imgur.com/yur7mbF.jpg",
+        "https://i.imgur.com/6dGFzYB.jpg",
+        "https://i.imgur.com/m4KIDBi.jpg",
+        "https://i.imgur.com/vXFjJhh.jpg",
+        "https://i.imgur.com/EVXPq9z.jpg",
+        "https://i.imgur.com/Ba8QyWM.jpg",
+        "https://i.imgur.com/FCr4AGF.jpg",
+        "https://i.imgur.com/ArKPExr.jpg",
+        "https://i.imgur.com/4w7LCHI.jpg",
         "Buenos días a todos, en especial, al tío ☢⬆YOHI⬇☢"
     ];
 
     const responseBuenosDias = Math.floor(Math.random() * imagenesBuenosDias.length);
-    let generalChannel = client.channels.cache.get(generalChannelId);
-    generalChannel.send(imagenesBuenosDias[responseBuenosDias]);
+    let offTopicChannel = client.channels.cache.get(offTopicChannelId);
+    offTopicChannel.send(imagenesBuenosDias[responseBuenosDias]);
 }, null, false, 'America/Chihuahua');
 
 buenosDiasMode7.start();
