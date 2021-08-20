@@ -377,12 +377,13 @@ let buenosDiasMode7Friday = new cron.CronJob('00 00 7 * * fri', () => {
         "https://i.imgur.com/3VRfKBS.jpg",
         "https://i.imgur.com/Fcrst4G.gifv",
         "Feliz viernes prros, pásenla chido",
+        "Ya es viernes raza, ¡ánimo!",
         "TGIF 🥳🥳🥳"
     ];
 
     const responseBuenosDias = Math.floor(Math.random() * imagenesBuenosDias.length);
-    let generalChannel = client.channels.cache.get(generalChannelId);
-    generalChannel.send(imagenesBuenosDias[responseBuenosDias]);
+    let offTopicChannel = client.channels.cache.get(offTopicChannelId);
+    offTopicChannel.send(imagenesBuenosDias[responseBuenosDias]);
 }, null, false, 'America/Chihuahua');
 
 buenosDiasMode7Friday.start();
