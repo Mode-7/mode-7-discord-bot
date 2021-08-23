@@ -550,7 +550,11 @@ client.on("message", (message) => {
         "valiendo barriga",
         "valiendo Barriga",
         "Valiendo barriga",
-        "Valiendo Barriga"
+        "Valiendo Barriga",
+        "baliendo barriga",
+        "baliendo Barriga",
+        "Baliendo barriga",
+        "Baliendo Barriga"
     ];
 
     const command = message.content;
