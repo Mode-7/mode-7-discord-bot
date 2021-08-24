@@ -110,6 +110,13 @@ client.once("ready", async () => {
         },
     });
 
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'adiossuave',
+            description: 'Los que juegan en el Mode 7 Grand Prix, saben qué hacer con este comando.'
+        },
+    });
+
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
         const command = interaction.data.name.toLowerCase();
 
@@ -143,6 +150,9 @@ client.once("ready", async () => {
                 break;
             case "boiler":
                 reply(interaction, `https://cdn.discordapp.com/attachments/478782450806292481/812162915674488863/8d7575fecdf184d33f258a3abcfe691a.png`);
+                break;
+            case "adiossuave":
+                reply(interaction, `https://i.imgur.com/pw7eV4Y.jpg`);
                 break;
             default:
         }
