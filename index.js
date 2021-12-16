@@ -314,13 +314,14 @@ client.on("message", (message) => {
         "jugón, priísta e infiel, ¿qué más quieres mi reina?",
         "detecto una alta cantidad de jugonería aquí",
         "hay tiempos de jugar y tiempos de callar",
-        "a ningún jugón le amarga un fifita",
-        "ves que el vato es jugón y le das free fire",,
+        "a ningún jugón le hace daño un fifita",
+        "ves que el vato es jugón y le da game pass",
         "jugando y meando pa' hacer charco",
         "no se puede chiflar y ganar en el fortnite al mismo tiempo",
         "¡ni que fueran enchiladas, prro!",
         "¿lo quieres peladito y en la boca?",
-        "https://i.imgur.com/6fHfar4.png"
+        "https://i.imgur.com/6fHfar4.png",
+        "ALV XD"
     ];
 
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
@@ -388,7 +389,10 @@ let buenosDiasMode7Friday = new cron.CronJob('00 00 7 * * fri', () => {
         "https://i.imgur.com/Fcrst4G.gifv",
         "Feliz viernes prros, pásenla chido",
         "Ya es viernes raza, ¡ánimo!",
-        "TGIF 🥳🥳🥳"
+        "TGIF 🥳🥳🥳",
+        "Gracias a Dios es viernes razaaaa",
+        "Ya viernes gente, ¿qué van a jugar este fin de semana?",
+        "Viernesuki"
     ];
 
     const responseBuenosDias = Math.floor(Math.random() * imagenesBuenosDias.length);
