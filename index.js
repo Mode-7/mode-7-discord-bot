@@ -320,6 +320,7 @@ client.on("message", (message) => {
         "no se puede chiflar y ganar en el fortnite al mismo tiempo",
         "¡ni que fueran enchiladas, prro!",
         "¿lo quieres peladito y en la boca?",
+        "con eso te armabas una pc krnal",
         "https://i.imgur.com/6fHfar4.png",
         "ALV XD"
     ];
@@ -331,6 +332,39 @@ client.on("message", (message) => {
     for (let i = 0; i < palabrasTrigger.length; i++) {
         if (command.includes(palabrasTrigger[i])) {
             message.channel.send(respuestasJugon[responseJugon]);
+            break;
+        }
+    }
+});
+
+// Comandos jueves
+client.on("message", (message) => {
+    if (message.author.bot) return;
+
+    const palabrasTriggerJueves = [
+        "jueves",
+        "Jueves"
+    ];
+
+    const respuestasJugonJueves = [
+        "viernes chiquito",
+        "jueves de mario karritos ahuevo",
+        "día de putazos en mario kart",
+        "tgit",
+        "¡hoy hay Mode 7 Grand Prix prros!",
+        "ánimo mis chingones ya es jueves",
+        "puro mario kart y no mamadas alv",
+        "siento que arranco la carretera 🎶",
+        "échenme esos boilers pues"
+    ];
+
+    const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
+
+    const command = message.content;
+
+    for (let i = 0; i < palabrasTriggerJueves.length; i++) {
+        if (command.includes(palabrasTriggerJueves[i])) {
+            message.channel.send(respuestasJugonJueves[responseJugonJueves]);
             break;
         }
     }
