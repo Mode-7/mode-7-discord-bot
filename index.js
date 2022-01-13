@@ -276,6 +276,8 @@ client.on("message", (message) => {
     if (message.author.bot) return;
 
     const palabrasTrigger = [
+        "mode 7",
+        "Mode 7",
         "jugón",
         "jugon",
         "jugona",
@@ -322,7 +324,8 @@ client.on("message", (message) => {
         "¿lo quieres peladito y en la boca?",
         "con eso te armabas una pc krnal",
         "https://i.imgur.com/6fHfar4.png",
-        "ALV XD"
+        "ALV XD",
+        "https://i.imgur.com/rsUQ6ko.png" // Exceso en jugones
     ];
 
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
