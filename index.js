@@ -410,7 +410,8 @@ let buenosDiasMode7 = new cron.CronJob('00 00 7 * * sun-thu', () => {
         "https://i.imgur.com/FCr4AGF.jpg",
         "https://i.imgur.com/ArKPExr.jpg",
         "https://i.imgur.com/4w7LCHI.jpg",
-        "Buenos días a todos, en especial, al tío ☢⬆YOHI⬇☢"
+        "Buenos días a todos, en especial, al tío ☢⬆YOHI⬇☢",
+        "https://luiscarlospando.com/mode-7-discord/M7_buen_dia.mp4"
     ];
 
     const responseBuenosDias = Math.floor(Math.random() * imagenesBuenosDias.length);
