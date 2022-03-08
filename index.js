@@ -291,6 +291,8 @@ client.on("message", (message) => {
     ];
 
     const respuestasJugon = [
+        "eso tilín",
+        "soñé que Mulaka estaba chido raza 😕",
         "¿pero qué tan jugón?",
         "jugón mis webos",
         "ni eres tan jugón, ¿pa' qué te haces?",
@@ -325,7 +327,7 @@ client.on("message", (message) => {
         "con eso te armabas una pc krnal",
         "https://i.imgur.com/6fHfar4.png",
         "ALV XD",
-        "https://i.imgur.com/rsUQ6ko.png", // Exceso en jugones,
+        "https://i.imgur.com/rsUQ6ko.png", // Exceso en jugones
         "¿ya andan jugando cascajo?",
         "jueguen el pelón del don noviembre"
     ];
