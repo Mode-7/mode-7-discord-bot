@@ -477,7 +477,7 @@ recordarM7GP.start();
 
 let flyerM7GP = new cron.CronJob('00 00 11 * * 4', () => {
     let mariokartChannel = client.channels.cache.get(mariokartChannelId);
-    mariokartChannel.send(`Y acuérdense de compartir el flyer, el hashtag y el código del torneo con sus compas.\n\nCódigo: 0746-6549-8155\nLink a este canal: https://discord.gg/U77J5c6\n\nhttps://i.imgur.com/ziq0noE.png`);
+    mariokartChannel.send(`Y acuérdense de compartir el flyer, el hashtag y el código del torneo con sus compas.\n\nCódigo: 0746-6549-8155\nLink a este canal: https://discord.gg/U77J5c6\n\nhttps://i.imgur.com/u4ekrdL.png`);
 }, null, false, 'America/Chihuahua');
 
 flyerM7GP.start();
