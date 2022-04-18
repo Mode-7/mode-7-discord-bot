@@ -331,7 +331,8 @@ client.on("message", (message) => {
         "ALV XD",
         "https://i.imgur.com/rsUQ6ko.png", // Exceso en jugones
         "¿ya andan jugando cascajo?",
-        "jueguen el pelón del don noviembre"
+        "jueguen el pelón del don noviembre",
+        "https://cdn.discordapp.com/attachments/479071002094075931/965658462518382703/Contina-viendo-los-posts.mp4"
     ];
 
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
