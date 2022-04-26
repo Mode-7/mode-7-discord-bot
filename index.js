@@ -278,6 +278,8 @@ client.on("message", (message) => {
     const palabrasTrigger = [
         "mode 7",
         "Mode 7",
+        "mode7",
+        "Mode7",
         "jugón",
         "jugon",
         "jugona",
