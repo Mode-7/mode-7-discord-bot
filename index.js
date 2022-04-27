@@ -117,6 +117,20 @@ client.once("ready", async () => {
         },
     });
 
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'policíajugona-1',
+            description: 'Invoca la policía jugona para checar que la raza haya terminado sus juegos.'
+        },
+    });
+
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'policíajugona-2',
+            description: 'Invoca la policía jugona para checar que la raza haya terminado sus juegos.'
+        },
+    });
+
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
         const command = interaction.data.name.toLowerCase();
 
@@ -153,6 +167,12 @@ client.once("ready", async () => {
                 break;
             case "adiossuave":
                 reply(interaction, `https://i.imgur.com/pw7eV4Y.jpg`);
+                break;
+            case "policíajugona-1":
+                reply(interaction, `https://i.imgur.com/V0x0iOS.png`);
+                break;
+            case "policíajugona-2":
+                reply(interaction, `https://i.imgur.com/jRYhz7i.png`);
                 break;
             default:
         }
