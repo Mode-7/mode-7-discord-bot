@@ -195,8 +195,8 @@ client.once("ready", async () => {
 client.on("guildMemberAdd", (member) => {
     console.log(member);
 
-    const welcomeText = `¡Bienvenid@  <@${member.id}>! 🎉 🤗\nAntes de comenzar, te pedimos leer las ${member.guild.channels.cache.get(rulesChannelId).toString()} y si necesitas ayuda con algo, puedes preguntar en ${member.guild.channels.cache.get(generalChannelId).toString()}.\n\nDisfruta de tu estancia en Mode 7.\n\nhttps://www.youtube.com/watch?v=o0kGvgXmmgk`
-    const channel = member.guild.channels.cache.get(welcomeChannelId);
+    const welcomeText = `¡Bienvenid@  <@${member.id}>! 🎉 🤗\nAntes de comenzar, date una vuelta por las ${member.guild.channels.cache.get(rulesChannelId).toString()} y si necesitas ayuda con algo, puedes preguntar en ${member.guild.channels.cache.get(generalChannelId).toString()}.\n\nQue disfrutes de tu estancia en Mode 7.\n\nhttps://www.youtube.com/watch?v=o0kGvgXmmgk`
+    const channel = member.guild.channels.cache.get(generalChannelId);
 
     channel.send(welcomeText);
 });
