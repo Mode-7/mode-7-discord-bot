@@ -12,8 +12,8 @@ guildId = process.env.GUILD_ID; // ID del GUILD
 const announcementChannelId = '664249693601267743'; // Canal de anuncios
 const welcomeChannelId = '741028008361721866'; // Canal de bienvenida
 const rulesChannelId = '479304179102384128'; // Canal de reglas
-const generalChannelId = '478782494666129419'; // Canal general
-const offTopicChannelId = '875506827377381456'; // Canal off topic
+const generalChannelId = '875506827377381456'; // Canal general
+const gamingGeneralChannelId = '478782494666129419'; // Canal gaming general
 const comidaChannelId = '602245119344902144'; // Canal de comida
 const mariokartChannelId = '478782450806292481'; // Canal Mario Kart
 // const ctrChannelId = '731357870364295198'; // Canal Crash Team Racing
@@ -195,8 +195,8 @@ client.once("ready", async () => {
 client.on("guildMemberAdd", (member) => {
     console.log(member);
 
-    const welcomeText = `¡Bienvenid@  <@${member.id}>! 🎉 🤗\nAntes de comenzar, date una vuelta por las ${member.guild.channels.cache.get(rulesChannelId).toString()} y si necesitas ayuda con algo, puedes preguntar en ${member.guild.channels.cache.get(generalChannelId).toString()}.\n\nQue disfrutes de tu estancia en Mode 7.\n\nhttps://www.youtube.com/watch?v=o0kGvgXmmgk`
-    const channel = member.guild.channels.cache.get(generalChannelId);
+    const welcomeText = `¡Bienvenid@  <@${member.id}>! 🎉 🤗\nAntes de comenzar, date una vuelta por las ${member.guild.channels.cache.get(rulesChannelId).toString()} y si necesitas ayuda con algo, puedes preguntar en ${member.guild.channels.cache.get(gamingGeneralChannelId).toString()}.\n\nQue disfrutes de tu estancia en Mode 7.\n\nhttps://www.youtube.com/watch?v=o0kGvgXmmgk`
+    const channel = member.guild.channels.cache.get(gamingGeneralChannelId);
 
     channel.send(welcomeText);
 });
@@ -443,8 +443,8 @@ let buenosDiasMode7 = new cron.CronJob('00 00 7 * * sun-thu', () => {
     ];
 
     const responseBuenosDias = Math.floor(Math.random() * imagenesBuenosDias.length);
-    let offTopicChannel = client.channels.cache.get(offTopicChannelId);
-    offTopicChannel.send(imagenesBuenosDias[responseBuenosDias]);
+    let generalChannel = client.channels.cache.get(generalChannelId);
+    generalChannel.send(imagenesBuenosDias[responseBuenosDias]);
 }, null, false, 'America/Chihuahua');
 
 buenosDiasMode7.start();
@@ -464,8 +464,8 @@ let buenosDiasMode7Friday = new cron.CronJob('00 00 7 * * fri', () => {
     ];
 
     const responseBuenosDias = Math.floor(Math.random() * imagenesBuenosDias.length);
-    let offTopicChannel = client.channels.cache.get(offTopicChannelId);
-    offTopicChannel.send(imagenesBuenosDias[responseBuenosDias]);
+    let generalChannel = client.channels.cache.get(generalChannelId);
+    generalChannel.send(imagenesBuenosDias[responseBuenosDias]);
 }, null, false, 'America/Chihuahua');
 
 buenosDiasMode7Friday.start();
@@ -487,8 +487,8 @@ let buenosDiasMode7Wknd = new cron.CronJob('00 00 7 * * sat', () => {
     ];
 
     const responseBuenosDias = Math.floor(Math.random() * imagenesBuenosDias.length);
-    let offTopicChannel = client.channels.cache.get(offTopicChannelId);
-    offTopicChannel.send(imagenesBuenosDias[responseBuenosDias]);
+    let generalChannel = client.channels.cache.get(generalChannelId);
+    generalChannel.send(imagenesBuenosDias[responseBuenosDias]);
 }, null, false, 'America/Chihuahua');
 
 buenosDiasMode7Wknd.start();
