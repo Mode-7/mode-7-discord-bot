@@ -10,10 +10,11 @@ guildId = process.env.GUILD_ID; // ID del GUILD
 
 // IDs de canales
 const announcementChannelId = '664249693601267743'; // Canal de anuncios
-const welcomeChannelId = '741028008361721866'; // Canal de bienvenida
+const welcomeChannelId = '478777821976723487'; // Canal de bienvenida
 const rulesChannelId = '479304179102384128'; // Canal de reglas
 const generalChannelId = '875506827377381456'; // Canal general
 const gamingGeneralChannelId = '478782494666129419'; // Canal gaming general
+const helpChannelId = '973608999410872400'; // Canal de ayuda
 const comidaChannelId = '602245119344902144'; // Canal de comida
 const mariokartChannelId = '478782450806292481'; // Canal Mario Kart
 // const ctrChannelId = '731357870364295198'; // Canal Crash Team Racing
@@ -195,8 +196,8 @@ client.once("ready", async () => {
 client.on("guildMemberAdd", (member) => {
     console.log(member);
 
-    const welcomeText = `¡Bienvenid@  <@${member.id}>! 🎉 🤗\nAntes de comenzar, date una vuelta por las ${member.guild.channels.cache.get(rulesChannelId).toString()} y si necesitas ayuda con algo, puedes preguntar en ${member.guild.channels.cache.get(gamingGeneralChannelId).toString()}.\n\nQue disfrutes de tu estancia en Mode 7.\n\nhttps://www.youtube.com/watch?v=o0kGvgXmmgk`
-    const channel = member.guild.channels.cache.get(gamingGeneralChannelId);
+    const welcomeText = `¡Bienvenid@  <@${member.id}>! 🎉 🤗\nAntes de comenzar, date una vuelta por las ${member.guild.channels.cache.get(rulesChannelId).toString()} y si necesitas ayuda con algo, puedes preguntar en ${member.guild.channels.cache.get(helpChannelId).toString()}.\n\nQue disfrutes de tu estancia en Mode 7.\n\nhttps://www.youtube.com/watch?v=o0kGvgXmmgk`
+    const channel = member.guild.channels.cache.get(generalChannelId);
 
     channel.send(welcomeText);
 });
