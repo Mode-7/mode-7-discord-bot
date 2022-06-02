@@ -131,7 +131,7 @@ client.once("ready", async () => {
             description: 'Invoca la policía jugona para checar que la raza haya terminado sus juegos.'
         },
     });
-    
+
     });
 
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
@@ -358,7 +358,8 @@ client.on("message", (message) => {
         "¿ya andan jugando cascajo?",
         "jueguen el pelón del don noviembre",
         "https://cdn.discordapp.com/attachments/479071002094075931/965658462518382703/Contina-viendo-los-posts.mp4",
-        "puto el que lo lea xD"
+        "puto el que lo lea xD",
+        "ni saben leer 🤭"
     ];
 
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
