@@ -134,7 +134,7 @@ client.once("ready", async () => {
 
     await getApp(guildId).commands.post({
         data: {
-            name: 'ni-saben-leer',
+            name: 'nisabenleer',
             description: 'Cuando no lee la raza, usa este comando.'
         },
     });
@@ -182,7 +182,7 @@ client.once("ready", async () => {
             case "policiajugona-2":
                 reply(interaction, `https://i.imgur.com/jRYhz7i.png`);
                 break;
-            case "ni-saben-leer":
+            case "nisabenleer":
                 reply(interaction, `https://i.imgur.com/k0RNA5A.png`);
                 break;
             default:
