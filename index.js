@@ -805,5 +805,8 @@ client.on("message", (message) => {
     }
 });
 
+// Borrar comandos sin usar
+guild.commands.cache.find(c => c.name === 'ni-saben-leer').delete();
+
 // client.login(config.token);
 client.login(process.env.BOT_TOKEN); // BOT_TOKEN es el Config Var creado en Heroku
