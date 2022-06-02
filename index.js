@@ -132,8 +132,6 @@ client.once("ready", async () => {
         },
     });
 
-    });
-
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
         const command = interaction.data.name.toLowerCase();
 
