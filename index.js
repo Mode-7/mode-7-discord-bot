@@ -131,12 +131,7 @@ client.once("ready", async () => {
             description: 'Invoca la policía jugona para checar que la raza haya terminado sus juegos.'
         },
     });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'nisabenleer',
-            description: 'Cuando no lee la raza, usa este comando.'
-        },
+    
     });
 
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
@@ -181,9 +176,6 @@ client.once("ready", async () => {
                 break;
             case "policiajugona-2":
                 reply(interaction, `https://i.imgur.com/jRYhz7i.png`);
-                break;
-            case "nisabenleer":
-                reply(interaction, `https://i.imgur.com/k0RNA5A.png`);
                 break;
             default:
         }
