@@ -50,6 +50,9 @@ const getApp = (guildId) => {
 client.once("ready", async () => {
     console.log("Estoy listo.");
 
+    // Borrar comandos sin usar
+    guild.commands.cache.find(c => c.name === 'ni-saben-leer').delete();
+
     // Regresa todos los comandos (de este guildId en particular)
     const commands = await getApp(guildId).commands.get();
     console.log(commands);
@@ -804,9 +807,6 @@ client.on("message", (message) => {
         }
     }
 });
-
-// Borrar comandos sin usar
-guild.commands.cache.find(c => c.name === 'ni-saben-leer').delete();
 
 // client.login(config.token);
 client.login(process.env.BOT_TOKEN); // BOT_TOKEN es el Config Var creado en Heroku
