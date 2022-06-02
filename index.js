@@ -55,7 +55,7 @@ client.once("ready", async () => {
     console.log(commands);
 
     // Borrar comandos sin usar
-    getApp(guildId).commands.cache.find(c => c.name === 'ni-saben-leer').delete();
+    await getApp(guildId).commands.cache.find(c => c.name === 'ni-saben-leer').delete();
 
     // Comandos
     await getApp(guildId).commands.post({
