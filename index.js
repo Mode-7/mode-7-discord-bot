@@ -55,7 +55,7 @@ client.once("ready", async () => {
     console.log(commands);
 
     // Borrar comandos sin usar
-    bot.application.commands.fetch().then(c => console.log(c));
+    guildId.commands.delete('981956565127036988'); // ni-saben-leer
 
     // Comandos
     await getApp(guildId).commands.post({
