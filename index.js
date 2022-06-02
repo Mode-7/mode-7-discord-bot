@@ -50,12 +50,12 @@ const getApp = (guildId) => {
 client.once("ready", async () => {
     console.log("Estoy listo.");
 
-    // Borrar comandos sin usar
-    guildId.commands.cache.find(c => c.name === 'ni-saben-leer').delete();
-
     // Regresa todos los comandos (de este guildId en particular)
     const commands = await getApp(guildId).commands.get();
     console.log(commands);
+
+    // Borrar comandos sin usar
+    getApp(guildId).commands.cache.find(c => c.name === 'ni-saben-leer').delete();
 
     // Comandos
     await getApp(guildId).commands.post({
