@@ -55,12 +55,12 @@ client.once("ready", async () => {
     console.log(commands);
 
     // Borrar comandos sin usar
-    client.application.commands.fetch('981956150524280832') // id del comando "ni-saben-leer"
+    await getApp(guildId).commands.fetch('981956150524280832') // id del comando "ni-saben-leer"
         .then( (command) => {
-            console.log(`Fetched command ${command.name}`)
+            console.log(`Fetched command: ${command.name}`);
             // further delete it like so:
-            command.delete()
-            console.log(`Deleted command ${command.name}`)
+            command.delete();
+            console.log(`Deleted command: ${command.name}`);
     }).catch(console.error);
 
     // Comandos
