@@ -55,8 +55,7 @@ client.once("ready", async () => {
     console.log(commands);
 
     // Borrar comandos sin usar
-    const borrarComando = await getApp(guildId).commands.get('981956150524280832');
-    console.log(borrarComando);
+    const borrarComando = await getApp(guildId).commands.fetch().then(c => console.log(c));
 
     // Comandos
     await getApp(guildId).commands.post({
