@@ -578,7 +578,9 @@ client.on("message", (message) => {
         "¿qué onda, qué onda?",
         "soy Suave",
         "tuuuuut",
-        "¿qué tranza prros?"
+        "¿qué tranza prros?",
+        "ni saben leer 🤭",
+        "al chile si... SIUUUU"
     ];
 
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
