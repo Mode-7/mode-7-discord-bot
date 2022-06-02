@@ -132,6 +132,13 @@ client.once("ready", async () => {
         },
     });
 
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'ni-saben-leer',
+            description: 'Cuando no lee la raza, usa este comando.'
+        },
+    });
+
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
         const command = interaction.data.name.toLowerCase();
 
@@ -174,6 +181,9 @@ client.once("ready", async () => {
                 break;
             case "policiajugona-2":
                 reply(interaction, `https://i.imgur.com/jRYhz7i.png`);
+                break;
+            case "ni-saben-leer":
+                reply(interaction, `https://i.imgur.com/k0RNA5A.png`);
                 break;
             default:
         }
