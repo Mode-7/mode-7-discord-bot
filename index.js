@@ -55,13 +55,8 @@ client.once("ready", async () => {
     console.log(commands);
 
     // Borrar comandos sin usar
-    await getApp(guildId).commands.fetch('981956150524280832') // id del comando "ni-saben-leer"
-        .then( (command) => {
-            console.log(`Fetched command: ${command.name}`);
-            // further delete it like so:
-            command.delete();
-            console.log(`Deleted command: ${command.name}`);
-    }).catch(console.error);
+    const borrarComando = await getApp(guildId).commands.fetch('981956150524280832');
+    console.log(borrarComando);
 
     // Comandos
     await getApp(guildId).commands.post({
