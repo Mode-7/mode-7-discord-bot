@@ -132,6 +132,13 @@ client.once("ready", async () => {
         },
     });
 
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'c-antoga',
+            description: 'El comando perfecto para cuando c antoga.'
+        },
+    });
+
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
         const command = interaction.data.name.toLowerCase();
 
@@ -174,6 +181,9 @@ client.once("ready", async () => {
                 break;
             case "policiajugona-2":
                 reply(interaction, `https://i.imgur.com/jRYhz7i.png`);
+                break;
+            case "c-antoga":
+                reply(interaction, `https://i.imgur.com/kudrTP3.png`);
                 break;
             default:
         }
