@@ -353,7 +353,7 @@ client.on("message", (message) => {
         "detecto una alta cantidad de jugonería aquí",
         "hay tiempos de jugar y tiempos de callar",
         "a ningún jugón le hace daño un fifita",
-        "ves que el vato es jugón y le da game pass",
+        "ves que el vato es jugón y le das game pass",
         "ah prro, a punta de puro game pass",
         "no se puede chiflar y ganar en el fortnite al mismo tiempo",
         "¿no que muy jugones? pinches ojetitos",
