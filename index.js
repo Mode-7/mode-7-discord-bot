@@ -828,5 +828,16 @@ client.on("message", (message) => {
     }
 });
 
+// Cuando el Shinobi postea algo en el canal de 🍲│comida
+client.on("message", (message) => {
+    if (message.channel.id == comidaChannelId) {
+        let author = msg.author.id;        
+
+        if (author == client.users.cache.find(u => u.tag === 'shinobipunk#7122').id) {
+            message.channel.send('https://i.imgur.com/9XsTQuI.png');
+        }
+    };
+});
+
 // client.login(config.token);
 client.login(process.env.BOT_TOKEN); // BOT_TOKEN es el Config Var creado en Heroku
