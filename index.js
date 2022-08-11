@@ -142,7 +142,7 @@ client.once("ready", async () => {
     await getApp(guildId).commands.post({
         data: {
             name: 'calzon-matatan',
-            description: '¿Matatán recientemente subió créditos de algún juego a su Twitter? Hora de usar este útil comando.'
+            description: '¿Matatán compró o subió créditos de algún juego a su Twitter? Hora de usar este útil comando. 🫣'
         },
     });
 
