@@ -139,6 +139,13 @@ client.once("ready", async () => {
         },
     });
 
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'calzon-matatan',
+            description: '¿Matatán recientemente subió créditos de algún juego a su Twitter? Hora de usar este útil comando.'
+        },
+    });
+
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
         const command = interaction.data.name.toLowerCase();
 
@@ -184,6 +191,9 @@ client.once("ready", async () => {
                 break;
             case "c-antoga":
                 reply(interaction, `https://i.imgur.com/kudrTP3.png`);
+                break;
+            case "calzon-matatan":
+                reply(interaction, `https://i.imgur.com/cTyf3cY.jpg`);
                 break;
             default:
         }
