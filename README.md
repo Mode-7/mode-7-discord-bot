@@ -4,9 +4,7 @@
 
 Soy tu pequeño bot amigo (aka Hermabot), que vive en el Discord de [Mode 7](https://discord.gg/N2m8gKw).
 
-<a href="https://discord.gg/N2m8gKw">
-    <img src="https://img.shields.io/badge/chat-discord-black?style=flat&logo=discord" alt="Discord Chat">
-</a>
+[![Discord](https://img.shields.io/discord/478777821087662092?color=5865f2&label=Discord)](https://discord.gg/N2m8gKw)
 
 ## Lista de comandos (actualizado para usar Slash Commands)
 
