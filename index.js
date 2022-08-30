@@ -204,6 +204,7 @@ client.once("ready", async () => {
                 break;
             case "eww":
                 reply(interaction, `https://i.imgur.com/BkQT0a4.jpg`);
+                break;
             default:
         }
     });
