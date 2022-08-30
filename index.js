@@ -146,6 +146,13 @@ client.once("ready", async () => {
         },
     });
 
+    await getApp(guildId).commands.post({
+        data: {
+            name: 'eww',
+            description: 'Comando para cuando algo te da asco. 🐶'
+        },
+    });
+
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
         const command = interaction.data.name.toLowerCase();
 
@@ -195,6 +202,8 @@ client.once("ready", async () => {
             case "calzon-matatan":
                 reply(interaction, `https://i.imgur.com/cTyf3cY.jpg`);
                 break;
+            case "eww":
+                reply(interaction, `https://i.imgur.com/BkQT0a4.jpg`);
             default:
         }
     });
