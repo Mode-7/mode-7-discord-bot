@@ -755,7 +755,9 @@ client.on("message", (message) => {
         "bienvenidos una vez más",
         "Bienvenidos una vez más",
         "bienvenidos una vez mas",
-        "Bienvenidos una vez mas"
+        "Bienvenidos una vez mas",
+        "osea",
+        "Osea"
     ];
 
     const command = message.content;
