@@ -426,6 +426,59 @@ client.on("message", (message) => {
     }
 });
 
+// Comandos M7GP
+client.on("message", (message) => {
+    if (message.author.bot) return;
+
+    const palabrasTriggerJueves = [
+        "siento que arranco",
+        "siento que arranco...",
+        "Siento que arranco",
+        "Siento que arranco..."
+    ];
+
+    const respuestasJugonJueves = [
+        "la carretera 🎶"
+    ];
+
+    const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
+
+    const command = message.content;
+
+    for (let i = 0; i < palabrasTriggerJueves.length; i++) {
+        if (command.includes(palabrasTriggerJueves[i])) {
+            message.channel.send(respuestasJugonJueves[responseJugonJueves]);
+            break;
+        }
+    }
+});
+
+client.on("message", (message) => {
+    if (message.author.bot) return;
+
+    const palabrasTriggerJueves = [
+        "voy enfierrado",
+        "voy enfierrado...",
+        "Voy enfierrado",
+        "Voy enfierrado..."
+    ];
+
+    const respuestasJugonJueves = [
+        "por la costera 🎶"
+    ];
+
+    const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
+
+    const command = message.content;
+
+    for (let i = 0; i < palabrasTriggerJueves.length; i++) {
+        if (command.includes(palabrasTriggerJueves[i])) {
+            message.channel.send(respuestasJugonJueves[responseJugonJueves]);
+            break;
+        }
+    }
+});
+
 // Press F to pay Respects
 client.on("message", (message) => {
     if (message.author.bot) return;
