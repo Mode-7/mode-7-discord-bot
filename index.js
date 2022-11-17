@@ -438,7 +438,7 @@ client.on("message", (message) => {
     ];
 
     const respuestasJugonJueves = [
-        "la carretera 🎶"
+        "...la carretera 🎶"
     ];
 
     const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
@@ -464,7 +464,7 @@ client.on("message", (message) => {
     ];
 
     const respuestasJugonJueves = [
-        "por la costera 🎶"
+        "...por la costera 🎶"
     ];
 
     const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
