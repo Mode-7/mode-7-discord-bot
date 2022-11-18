@@ -505,6 +505,36 @@ client.on("message", (message) => {
     }
 });
 
+client.on("message", (message) => {
+    if (message.author.bot) return;
+
+    const palabrasTriggerJueves = [
+        "llevo un fletazo pal otro lado",
+        "llevo un fletazo pal otro lado...",
+        "Llevo un fletazo pal otro lado",
+        "Llevo un fletazo pal otro lado...",
+        "llevo un fletazo pa'l otro lado",
+        "llevo un fletazo pa'l otro lado...",
+        "Llevo un fletazo pa'l otro lado",
+        "Llevo un fletazo pa'l otro lado..."
+    ];
+
+    const respuestasJugonJueves = [
+        "...y voa ganarme, buena marmajaaa 🎶"
+    ];
+
+    const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
+
+    const command = message.content;
+
+    for (let i = 0; i < palabrasTriggerJueves.length; i++) {
+        if (command.includes(palabrasTriggerJueves[i])) {
+            message.channel.send(respuestasJugonJueves[responseJugonJueves]);
+            break;
+        }
+    }
+});
+
 // Press F to pay Respects
 client.on("message", (message) => {
     if (message.author.bot) return;
