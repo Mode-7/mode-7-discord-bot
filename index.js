@@ -479,6 +479,32 @@ client.on("message", (message) => {
     }
 });
 
+client.on("message", (message) => {
+    if (message.author.bot) return;
+
+    const palabrasTriggerJueves = [
+        "mi troca casi se desparpaja",
+        "mi troca casi se desparpaja...",
+        "Mi troca casi se desparpaja",
+        "Mi troca casi se desparpaja..."
+    ];
+
+    const respuestasJugonJueves = [
+        "...pura madre se me raja 🎶"
+    ];
+
+    const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
+
+    const command = message.content;
+
+    for (let i = 0; i < palabrasTriggerJueves.length; i++) {
+        if (command.includes(palabrasTriggerJueves[i])) {
+            message.channel.send(respuestasJugonJueves[responseJugonJueves]);
+            break;
+        }
+    }
+});
+
 // Press F to pay Respects
 client.on("message", (message) => {
     if (message.author.bot) return;
