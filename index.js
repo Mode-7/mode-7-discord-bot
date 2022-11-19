@@ -340,7 +340,9 @@ client.on("message", (message) => {
         "Jugon",
         "Jugona",
         "Jugones",
-        "Jugonas"
+        "Jugonas",
+        "cascajo",
+        "Cascajo"
     ];
 
     const respuestasJugon = [
@@ -357,7 +359,6 @@ client.on("message", (message) => {
         "la pura crema y nata jugona aquí",
         "yo si te saco los negros más negros",
         "Lord Jugón",
-        "¿ya contaste los crt que ha comprado ya Matatán?",
         "jugón se nace, no se hace",
         "pura frase jugona ustedes, se pasan xD",
         "ahora si que el <:pri:733044345262964837> porteó más",
