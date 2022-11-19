@@ -364,6 +364,7 @@ client.on("message", (message) => {
         "ahora si que el <:pri:733044345262964837> porteó más",
         "ah prre",
         "súper jugón",
+        "¿jugón y alucín?",
         "jugones, los quiero",
         "jugón, priísta e infiel, ¿qué más quieres mami?",
         "a ningún jugón le hace daño un fifa",
