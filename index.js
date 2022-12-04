@@ -52,7 +52,7 @@ client.once("ready", async () => {
 
     // Regresa todos los comandos (de este guildId en particular)
     const commands = await getApp(guildId).commands.get();
-    console.log(commands);
+    // console.log(commands);
 
     // Comandos
     await getApp(guildId).commands.post({
