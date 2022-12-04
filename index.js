@@ -3,6 +3,7 @@ const cron = require("cron");
 // const config = require("./config.json"); // No necesitamos este archivo al hacer deploy en Heroku
 
 const client = new Discord.Client();
+client.setMaxListeners(0);
 const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.env.WEBHOOK_TOKEN);
 
 // ID del GUILD
