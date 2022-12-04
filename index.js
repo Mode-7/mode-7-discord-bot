@@ -3,7 +3,7 @@ const cron = require("cron");
 // const config = require("./config.json"); // No necesitamos este archivo al hacer deploy en Heroku
 
 const client = new Discord.Client();
-client.setMaxListeners(0);
+// client.setMaxListeners(0);
 const webhookClient = new Discord.WebhookClient(process.env.WEBHOOK_ID, process.env.WEBHOOK_TOKEN);
 
 // ID del GUILD
@@ -57,101 +57,64 @@ client.once("ready", async () => {
 
     // Comandos
     await getApp(guildId).commands.post({
-        data: {
-            name: 'hola',
-            description: 'Usa este comando para recibir un saludo del Mode 7 Bot.'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'uwu',
-            description: 'Usa este comando para publicar un hermoso uwu.'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'encuentra',
-            description: 'Este comando te va a decir el miembro de Mode 7 más jugón del momento.'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'messirve',
-            description: 'Usa este comando cuando te sirva algo.'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'pildora',
-            description: '¿Necesitas hacer un volado? Usa este comando para tomar una decisión.'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'agradecido',
-            description: '¿Te sientes agradecido? Usa este comando entonces.'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'nopos',
-            description: '¿Se acabó el tema de conversación? Este es el comando perfecto.'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'boiler',
-            description: 'Solo los que le caen al Mode 7 Grand Prix saben la utilidad de este comando.'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'adiossuave',
-            description: 'Los que juegan en el Mode 7 Grand Prix, saben qué hacer con este comando.'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'policiajugona-1',
-            description: 'Invoca la policía jugona para checar que la raza haya terminado sus juegos.'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'policiajugona-2',
-            description: 'Invoca la policía jugona para checar que la raza haya terminado sus juegos.'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'c-antoga',
-            description: 'El comando perfecto para cuando c antoga.'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'calzon-matatan',
-            description: '¿Matatán compró o subió créditos de algún juego a su Twitter? Hora de usar este útil comando. 🫣'
-        },
-    });
-
-    await getApp(guildId).commands.post({
-        data: {
-            name: 'eww',
-            description: 'Comando para cuando algo te da asco. 🐶'
-        },
+        data: [
+            {
+                name: 'hola',
+                description: 'Usa este comando para recibir un saludo del Mode 7 Bot.'
+            },
+            {
+                name: 'uwu',
+                description: 'Usa este comando para publicar un hermoso uwu.'
+            },
+            {
+                name: 'encuentra',
+                description: 'Este comando te va a decir el miembro de Mode 7 más jugón del momento.'
+            },
+            {
+                name: 'messirve',
+                description: 'Usa este comando cuando te sirva algo.'
+            },
+            {
+                name: 'pildora',
+                description: '¿Necesitas hacer un volado? Usa este comando para tomar una decisión.'
+            },
+            {
+                name: 'agradecido',
+                description: '¿Te sientes agradecido? Usa este comando entonces.'
+            },
+            {
+                name: 'nopos',
+                description: '¿Se acabó el tema de conversación? Este es el comando perfecto.'
+            },
+            {
+                name: 'boiler',
+                description: 'Solo los que le caen al Mode 7 Grand Prix saben la utilidad de este comando.'
+            },
+            {
+                name: 'adiossuave',
+                description: 'Los que juegan en el Mode 7 Grand Prix, saben qué hacer con este comando.'
+            },
+            {
+                name: 'policiajugona-1',
+                description: 'Invoca la policía jugona para checar que la raza haya terminado sus juegos.'
+            },
+            {
+                name: 'policiajugona-2',
+                description: 'Invoca la policía jugona 2 para checar que la raza haya terminado sus juegos.'
+            },
+            {
+                name: 'c-antoga',
+                description: 'El comando perfecto para cuando c antoga.'
+            },
+            {
+                name: 'calzon-matatan',
+                description: '¿Matatán compró o subió créditos de algún juego a su Twitter? Hora de usar este útil comando. 🫣'
+            },
+            {
+                name: 'eww',
+                description: 'Comando para cuando algo te da asco. 🐶'
+            }
+        ]
     });
 
     client.ws.on('INTERACTION_CREATE', async (interaction) => {
