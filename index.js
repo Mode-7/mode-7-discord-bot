@@ -5,11 +5,13 @@ const { clientId, guildId, token } = require('./config.json');
 const cron = require("cron");
 
 // Create a new client instance and specify needed intents
-const client = new Client({ intents: [
-    GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMembers,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent]
+const client = new Client({ 
+    intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent
+    ]
 });
 
 // Guild ID
