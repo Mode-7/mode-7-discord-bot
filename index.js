@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 const { clientId, guildId, token } = require('./config.json');
-const cron = require("cron");
+const cron = require('cron');
 
 // Create a new client instance and specify needed intents
 const client = new Client({ 
