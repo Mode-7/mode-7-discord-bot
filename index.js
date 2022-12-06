@@ -3,6 +3,7 @@ const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
 // const { clientId, guildId, token } = require('./config.json');
 const cron = require('cron');
+let events = require('events');
 
 // Create a new client instance and specify needed intents
 const client = new Client({ 
@@ -15,7 +16,7 @@ const client = new Client({
 });
 
 // Disable max listeners
-const emitter = new EventEmitter();
+const emitter = new events.EventEmitter();
 emitter.setMaxListeners(50);
 
 // Guild ID
