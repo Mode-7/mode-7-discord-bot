@@ -15,7 +15,7 @@ const client = new Client({
 });
 
 // Disable max listeners
-process.setMaxListeners(0);
+emitter.setMaxListeners(0);
 
 // Guild ID
 // const guild = guildId; // ID del Guild Local
