@@ -14,9 +14,6 @@ const client = new Client({
     ]
 });
 
-// Disable max listeners
-process.setMaxListeners(50);
-
 // Guild ID
 // const guild = guildId; // ID del Guild Local
 const guild = process.env.GUILD_ID; // ID del Guild Remoto
@@ -84,7 +81,7 @@ client.on(Events.InteractionCreate, async interaction => {
 client.on("messageCreate", async message => {
     if (message.author.bot) return;
 
-    const palabrasTrigger = [
+    const palabrasTriggerJugon = [
         "mode 7",
         "Mode 7",
         "mode7",
@@ -141,22 +138,6 @@ client.on("messageCreate", async message => {
         "ahorita en la noche de splatoon"
     ];
 
-    const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTrigger.length; i++) {
-        if (command.includes(palabrasTrigger[i])) {
-            message.channel.send(respuestasJugon[responseJugon]);
-            break;
-        }
-    }
-});
-
-// Comandos jueves
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
-
     const palabrasTriggerJueves = [
         "jueves",
         "Jueves"
@@ -174,429 +155,27 @@ client.on("messageCreate", async message => {
         "échenme esos boilers pues"
     ];
 
-    const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTriggerJueves.length; i++) {
-        if (command.includes(palabrasTriggerJueves[i])) {
-            message.channel.send(respuestasJugonJueves[responseJugonJueves]);
-            break;
-        }
-    }
-});
-
-// Comandos M7GP
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
-
-    const palabrasTriggerJueves = [
-        "siento que arranco",
-        "siento que arranco...",
-        "Siento que arranco",
-        "Siento que arranco..."
-    ];
-
-    const respuestasJugonJueves = [
-        "...la carretera 🎶"
-    ];
-
-    const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTriggerJueves.length; i++) {
-        if (command.includes(palabrasTriggerJueves[i])) {
-            message.channel.send(respuestasJugonJueves[responseJugonJueves]);
-            break;
-        }
-    }
-});
-
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
-
-    const palabrasTriggerJueves = [
-        "voy enfierrado",
-        "voy enfierrado...",
-        "Voy enfierrado",
-        "Voy enfierrado..."
-    ];
-
-    const respuestasJugonJueves = [
-        "...por la costera 🎶"
-    ];
-
-    const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTriggerJueves.length; i++) {
-        if (command.includes(palabrasTriggerJueves[i])) {
-            message.channel.send(respuestasJugonJueves[responseJugonJueves]);
-            break;
-        }
-    }
-});
-
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
-
-    const palabrasTriggerJueves = [
-        "mi troca casi se desparpaja",
-        "mi troca casi se desparpaja...",
-        "Mi troca casi se desparpaja",
-        "Mi troca casi se desparpaja..."
-    ];
-
-    const respuestasJugonJueves = [
-        "...pura madre se me raja 🎶"
-    ];
-
-    const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTriggerJueves.length; i++) {
-        if (command.includes(palabrasTriggerJueves[i])) {
-            message.channel.send(respuestasJugonJueves[responseJugonJueves]);
-            break;
-        }
-    }
-});
-
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
-
-    const palabrasTriggerJueves = [
-        "llevo un fletazo pal otro lado",
-        "llevo un fletazo pal otro lado...",
-        "Llevo un fletazo pal otro lado",
-        "Llevo un fletazo pal otro lado...",
-        "llevo un fletazo pa'l otro lado",
-        "llevo un fletazo pa'l otro lado...",
-        "Llevo un fletazo pa'l otro lado",
-        "Llevo un fletazo pa'l otro lado..."
-    ];
-
-    const respuestasJugonJueves = [
-        "...y voa ganarme, buena marmajaaa 🎶"
-    ];
-
-    const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTriggerJueves.length; i++) {
-        if (command.includes(palabrasTriggerJueves[i])) {
-            message.channel.send(respuestasJugonJueves[responseJugonJueves]);
-            break;
-        }
-    }
-});
-
-// Press F to pay respects
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
-
-    const command = message.content;
-
-    if (command === "f" || command === "F") {
-        message.channel.send(`${message.member.user.username} pide "efes" en el chat.`);
-    }
-});
-
-// Le cae Marzito de aguafiestas
-client.on("messageCreate", async message => {
-    if (message.channel.id == announcementChannelId) {
-        if (message.author.bot) return;
-
-        message.channel.send(`https://i.imgur.com/PpkWAud.png`);
-    }
-});
-
-// Autoresponse PALA
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
-
-    const palabrasTrigger = [
-        "facebook",
-        "Facebook"
-    ];
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTrigger.length; i++) {
-        if (command.includes(palabrasTrigger[i])) {
-            message.channel.send('https://i.imgur.com/AmxiHj1.png');
-            break;
-        }
-    }
-});
-
-// Comandos hermabot
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
-
-    const palabrasTrigger = [
-        "hermabot",
-        "Hermabot",
-        "HERMABOT"
-    ];
-
-    const respuestasJugon = [
-        "¿qué pedo, yo qué?",
-        "hermabot, hermano, ya eres mexicano",
-        "¿qué pasó?",
-        "¿qué onda, qué onda?",
-        "soy Suave",
-        "tuuuuut",
-        "¿qué tranza prros?",
-        "ni saben leer, jaja 🤭",
-        "al chile SIUUUU",
-        `¿qué pedo mi ${message.member.user.username}?`,
-        `¿qué pasó ${message.member.user.username}? ¿me hablas?`
-    ];
-
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
+    const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
 
     const command = message.content;
 
-    for (let i = 0; i < palabrasTrigger.length; i++) {
-        if (command.includes(palabrasTrigger[i])) {
+    for (let i = 0; i < palabrasTriggerJugon.length; i++) {
+        if (command.includes(palabrasTriggerJugon[i])) {
             message.channel.send(respuestasJugon[responseJugon]);
             break;
         }
     }
-});
 
-// Homenaje al Julz
-client.on("messageCreate", async message => {
-    if (message.channel.id == comidaChannelId) {
-        if (message.author.bot) return;
-
-        const palabrasTrigger = [
-            "julz",
-            "Julz",
-            "@julz",
-            "@Julz"
-        ];
-
-        const command = message.content;
-
-        for (let i = 0; i < palabrasTrigger.length; i++) {
-            if (command.includes(palabrasTrigger[i])) {
-                message.channel.send('https://i.imgur.com/c4ImBHD.jpg');
-                break;
-            }
-        }
-    }
-});
-
-// Valiendo barriga
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
-
-    const palabrasTrigger = [
-        "valiendo barriga",
-        "valiendo Barriga",
-        "Valiendo barriga",
-        "Valiendo Barriga",
-        "baliendo barriga",
-        "baliendo Barriga",
-        "Baliendo barriga",
-        "Baliendo Barriga"
-    ];
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTrigger.length; i++) {
-        if (command.includes(palabrasTrigger[i])) {
-            message.channel.send('señor verga');
+    for (let i = 0; i < palabrasTriggerJueves.length; i++) {
+        if (command.includes(palabrasTriggerJueves[i])) {
+            message.channel.send(respuestasJugonJueves[responseJugonJueves]);
             break;
         }
     }
 });
 
-// Frases del Matatán
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
 
-    const palabrasTrigger = [
-        "Hola, ¿cómo están?",
-        "hola, ¿cómo están?",
-        "Hola ¿cómo están?",
-        "hola ¿cómo están?",
-        "Hola, cómo están?",
-        "hola, cómo están?",
-        "Hola cómo están?",
-        "hola cómo están?",
-        "Hola cómo están",
-        "hola cómo están",
-        "Hola, ¿como están?",
-        "hola, ¿como están?",
-        "Hola ¿como están?",
-        "hola ¿como están?",
-        "Hola, como están?",
-        "hola, como están?",
-        "Hola como están?",
-        "hola como están?",
-        "Hola como están",
-        "hola como están",
-        "Hola, ¿cómo estan?",
-        "hola, ¿cómo estan?",
-        "Hola ¿cómo estan?",
-        "hola ¿cómo estan?",
-        "Hola, cómo estan?",
-        "hola, cómo estan?",
-        "Hola cómo estan?",
-        "hola cómo estan?",
-        "Hola cómo estan",
-        "hola cómo estan",
-        "Hola, ¿como estan?",
-        "hola, ¿como estan?",
-        "Hola ¿como estan?",
-        "hola ¿como estan?",
-        "Hola, como estan?",
-        "hola, como estan?",
-        "Hola como estan?",
-        "hola como estan?",
-        "Hola como estan",
-        "hola como estan",
-        "está en gamepass",
-        "Está en gamepass",
-        "está en game pass",
-        "Está en game pass",
-        "está en Game Pass",
-        "Está en Game Pass",
-        "esta en gamepass",
-        "Esta en gamepass",
-        "esta en game pass",
-        "Esta en game pass",
-        "esta en Game Pass",
-        "Esta en Game Pass",
-        "están en gamepass",
-        "Están en gamepass",
-        "están en game pass",
-        "Están en game pass",
-        "están en Game Pass",
-        "Están en Game Pass",
-        "estan en gamepass",
-        "Estan en gamepass",
-        "estan en game pass",
-        "Estan en game pass",
-        "estan en Game Pass",
-        "Estan en Game Pass",
-        "bienvenidos una vez más",
-        "Bienvenidos una vez más",
-        "bienvenidos una vez mas",
-        "Bienvenidos una vez mas",
-        "osea",
-        "Osea"
-    ];
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTrigger.length; i++) {
-        if (command.includes(palabrasTrigger[i])) {
-            message.channel.send('<:matatan:691802785913634816>');
-            break;
-        }
-    }
-});
-
-// Si Dios quiere
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
-
-    const palabrasTrigger = [
-        "si Dios quiere",
-        "si dios quiere",
-        "si Dios kiere",
-        "si dios kiere",
-        "Si Dios quiere",
-        "Si dios quiere",
-        "Si Dios kiere",
-        "Si dios kiere"
-    ];
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTrigger.length; i++) {
-        if (command.includes(palabrasTrigger[i])) {
-            message.channel.send('https://i.imgur.com/F62Cn4E.jpg');
-            break;
-        }
-    }
-});
-
-// Puro pendejo usa Joycon
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
-
-    const palabrasTrigger = [
-        "joy-con",
-        "Joy-con",
-        "Joy-Con",
-        "joy-Con",
-        "JOY-CON",
-        "joycon",
-        "JOYCON",
-        "joy con",
-        "JOY CON",
-        "joycons",
-        "JOYCONS",
-        "joy cons",
-        "JOY CONS",
-        "Joycon",
-        "Joy Con",
-        "JOY CON",
-        "Joycons",
-        "Joy Cons"
-    ];
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTrigger.length; i++) {
-        if (command.includes(palabrasTrigger[i])) {
-            message.channel.send('https://i.imgur.com/eHYWCPU.png');
-            break;
-        }
-    }
-});
-
-// Salud Matatán
-client.on("messageCreate", async message => {
-    if (message.author.bot) return;
-
-    const palabrasTrigger = [
-        "salud",
-        "Salud",
-        "SALUD"
-    ];
-
-    const command = message.content;
-
-    for (let i = 0; i < palabrasTrigger.length; i++) {
-        if (command.includes(palabrasTrigger[i])) {
-            message.channel.send('https://i.imgur.com/FLQT9B2.jpg');
-            break;
-        }
-    }
-});
-
-// Cuando el Shinobi postea algo en el canal de 🍲│comida
-client.on("messageCreate", async message => {
-    if (message.channel.id == comidaChannelId) {
-        if (message.author.bot) return;
-
-        let author = message.author.id;        
-
-        if (author == client.users.cache.find(u => u.tag === 'shinobipunk#7122').id) {
-            message.channel.send('https://i.imgur.com/9XsTQuI.png');
-        }
-    };
-});
 
 // Buenos días Mode 7
 let buenosDiasMode7 = new cron.CronJob('00 00 7 * * sun-thu', () => {
