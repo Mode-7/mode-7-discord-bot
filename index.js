@@ -15,7 +15,7 @@ const client = new Client({
 });
 
 // Disable max listeners
-const emitter = new EventEmitter()
+const emitter = new EventEmitter();
 emitter.setMaxListeners(50);
 
 // Guild ID
