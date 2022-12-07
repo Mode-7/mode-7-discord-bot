@@ -144,7 +144,6 @@ client.on("messageCreate", async message => {
     ];
 
     const respuestasJugonJueves = [
-        "viernes chiquito",
         "jueves de mario karritos ahuevo",
         "día de putazos en mario kart",
         "tgit",
