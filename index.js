@@ -14,6 +14,9 @@ const client = new Client({
     ]
 });
 
+// Disable max listeners
+process.setMaxListeners(50);
+
 // Guild ID
 // const guild = guildId; // ID del Guild Local
 const guild = process.env.GUILD_ID; // ID del Guild Remoto
@@ -155,11 +158,220 @@ client.on("messageCreate", async message => {
         "échenme esos boilers pues"
     ];
 
+    const palabrasTriggerJueves1 = [
+        "siento que arranco",
+        "siento que arranco...",
+        "Siento que arranco",
+        "Siento que arranco..."
+    ];
+
+    const respuestasJugonJueves1 = [
+        "...la carretera 🎶"
+    ];
+
+    const palabrasTriggerJueves2 = [
+        "voy enfierrado",
+        "voy enfierrado...",
+        "Voy enfierrado",
+        "Voy enfierrado..."
+    ];
+
+    const respuestasJugonJueves2 = [
+        "...por la costera 🎶"
+    ];
+
+    const palabrasTriggerJueves3 = [
+        "mi troca casi se desparpaja",
+        "mi troca casi se desparpaja...",
+        "Mi troca casi se desparpaja",
+        "Mi troca casi se desparpaja..."
+    ];
+
+    const respuestasJugonJueves3 = [
+        "...pura madre se me raja 🎶"
+    ];
+
+    const palabrasTriggerJueves4 = [
+        "llevo un fletazo pal otro lado",
+        "llevo un fletazo pal otro lado...",
+        "Llevo un fletazo pal otro lado",
+        "Llevo un fletazo pal otro lado...",
+        "llevo un fletazo pa'l otro lado",
+        "llevo un fletazo pa'l otro lado...",
+        "Llevo un fletazo pa'l otro lado",
+        "Llevo un fletazo pa'l otro lado..."
+    ];
+
+    const respuestasJugonJueves4 = [
+        "...y voa ganarme, buena marmajaaa 🎶"
+    ];
+
+    const palabrasTriggerPala = [
+        "facebook",
+        "Facebook"
+    ];
+
+    const palabrasTriggerHermabot = [
+        "hermabot",
+        "Hermabot",
+        "HERMABOT"
+    ];
+
+    const respuestasHermabot = [
+        "¿qué pedo, yo qué?",
+        "hermabot, hermano, ya eres mexicano",
+        "¿qué pasó?",
+        "¿qué onda, qué onda?",
+        "soy Suave",
+        "tuuuuut",
+        "¿qué tranza prros?",
+        "ni saben leer, jaja 🤭",
+        "al chile SIUUUU",
+        `¿qué pedo mi ${message.member.user.username}?`,
+        `¿qué pasó ${message.member.user.username}? ¿me hablas?`
+    ];
+
+    const palabrasTriggerJulz = [
+        "julz",
+        "Julz",
+        "@julz",
+        "@Julz"
+    ];
+
+    const palabrasTriggerValiendo = [
+        "valiendo barriga",
+        "valiendo Barriga",
+        "Valiendo barriga",
+        "Valiendo Barriga",
+        "baliendo barriga",
+        "baliendo Barriga",
+        "Baliendo barriga",
+        "Baliendo Barriga"
+    ];
+
+    const palabrasTriggerMatatan = [
+        "Hola, ¿cómo están?",
+        "hola, ¿cómo están?",
+        "Hola ¿cómo están?",
+        "hola ¿cómo están?",
+        "Hola, cómo están?",
+        "hola, cómo están?",
+        "Hola cómo están?",
+        "hola cómo están?",
+        "Hola cómo están",
+        "hola cómo están",
+        "Hola, ¿como están?",
+        "hola, ¿como están?",
+        "Hola ¿como están?",
+        "hola ¿como están?",
+        "Hola, como están?",
+        "hola, como están?",
+        "Hola como están?",
+        "hola como están?",
+        "Hola como están",
+        "hola como están",
+        "Hola, ¿cómo estan?",
+        "hola, ¿cómo estan?",
+        "Hola ¿cómo estan?",
+        "hola ¿cómo estan?",
+        "Hola, cómo estan?",
+        "hola, cómo estan?",
+        "Hola cómo estan?",
+        "hola cómo estan?",
+        "Hola cómo estan",
+        "hola cómo estan",
+        "Hola, ¿como estan?",
+        "hola, ¿como estan?",
+        "Hola ¿como estan?",
+        "hola ¿como estan?",
+        "Hola, como estan?",
+        "hola, como estan?",
+        "Hola como estan?",
+        "hola como estan?",
+        "Hola como estan",
+        "hola como estan",
+        "está en gamepass",
+        "Está en gamepass",
+        "está en game pass",
+        "Está en game pass",
+        "está en Game Pass",
+        "Está en Game Pass",
+        "esta en gamepass",
+        "Esta en gamepass",
+        "esta en game pass",
+        "Esta en game pass",
+        "esta en Game Pass",
+        "Esta en Game Pass",
+        "están en gamepass",
+        "Están en gamepass",
+        "están en game pass",
+        "Están en game pass",
+        "están en Game Pass",
+        "Están en Game Pass",
+        "estan en gamepass",
+        "Estan en gamepass",
+        "estan en game pass",
+        "Estan en game pass",
+        "estan en Game Pass",
+        "Estan en Game Pass",
+        "bienvenidos una vez más",
+        "Bienvenidos una vez más",
+        "bienvenidos una vez mas",
+        "Bienvenidos una vez mas",
+        "osea",
+        "Osea"
+    ];
+
+    const palabrasTriggerDios = [
+        "si Dios quiere",
+        "si dios quiere",
+        "si Dios kiere",
+        "si dios kiere",
+        "Si Dios quiere",
+        "Si dios quiere",
+        "Si Dios kiere",
+        "Si dios kiere"
+    ];
+
+    const palabrasTriggerJoycon = [
+        "joy-con",
+        "Joy-con",
+        "Joy-Con",
+        "joy-Con",
+        "JOY-CON",
+        "joycon",
+        "JOYCON",
+        "joy con",
+        "JOY CON",
+        "joycons",
+        "JOYCONS",
+        "joy cons",
+        "JOY CONS",
+        "Joycon",
+        "Joy Con",
+        "JOY CON",
+        "Joycons",
+        "Joy Cons"
+    ];
+
+    const palabrasTriggerSaludMatatan = [
+        "salud",
+        "Salud",
+        "SALUD"
+    ];
+
+    // Randomizar respuestas
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
     const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
+    const responseJugonJueves1 = Math.floor(Math.random() * respuestasJugonJueves1.length);
+    const responseJugonJueves2 = Math.floor(Math.random() * respuestasJugonJueves2.length);
+    const responseJugonJueves3 = Math.floor(Math.random() * respuestasJugonJueves3.length);
+    const responseJugonJueves4 = Math.floor(Math.random() * respuestasJugonJueves4.length);
+    const responseHermabot = Math.floor(Math.random() * respuestasHermabot.length);
 
     const command = message.content;
 
+    // Respuestas jugonas
     for (let i = 0; i < palabrasTriggerJugon.length; i++) {
         if (command.includes(palabrasTriggerJugon[i])) {
             message.channel.send(respuestasJugon[responseJugon]);
@@ -167,15 +379,129 @@ client.on("messageCreate", async message => {
         }
     }
 
+    // Comandos M7GP
     for (let i = 0; i < palabrasTriggerJueves.length; i++) {
         if (command.includes(palabrasTriggerJueves[i])) {
             message.channel.send(respuestasJugonJueves[responseJugonJueves]);
             break;
         }
     }
+
+    for (let i = 0; i < palabrasTriggerJueves1.length; i++) {
+        if (command.includes(palabrasTriggerJueves1[i])) {
+            message.channel.send(respuestasJugonJueves1[responseJugonJueves1]);
+            break;
+        }
+    }
+
+    for (let i = 0; i < palabrasTriggerJueves2.length; i++) {
+        if (command.includes(palabrasTriggerJueves2[i])) {
+            message.channel.send(respuestasJugonJueves2[responseJugonJueves2]);
+            break;
+        }
+    }
+
+    for (let i = 0; i < palabrasTriggerJueves3.length; i++) {
+        if (command.includes(palabrasTriggerJueves3[i])) {
+            message.channel.send(respuestasJugonJueves3[responseJugonJueves3]);
+            break;
+        }
+    }
+
+    for (let i = 0; i < palabrasTriggerJueves4.length; i++) {
+        if (command.includes(palabrasTriggerJueves4[i])) {
+            message.channel.send(respuestasJugonJueves4[responseJugonJueves4]);
+            break;
+        }
+    }
+
+    // Press F to pay respects
+    if (command === "f" || command === "F") {
+        message.channel.send(`${message.member.user.username} pide "efes" en el chat.`);
+    }
+
+    // Le cae Marzito de aguafiestas
+    if (message.channel.id == announcementChannelId) {
+        if (message.author.bot) return;
+
+        message.channel.send(`https://i.imgur.com/PpkWAud.png`);
+    }
+
+    // Autoreponse PALA
+    for (let i = 0; i < palabrasTriggerPala.length; i++) {
+        if (command.includes(palabrasTriggerPala[i])) {
+            message.channel.send('https://i.imgur.com/AmxiHj1.png');
+            break;
+        }
+    }
+
+    // Hermabot
+    for (let i = 0; i < palabrasTriggerHermabot.length; i++) {
+        if (command.includes(palabrasTriggerHermabot[i])) {
+            message.channel.send(respuestasHermabot[responseHermabot]);
+            break;
+        }
+    }
+
+    // Homenaje al Julz
+    for (let i = 0; i < palabrasTriggerJulz.length; i++) {
+        if (command.includes(palabrasTriggerJulz[i])) {
+            message.channel.send('https://i.imgur.com/c4ImBHD.jpg');
+            break;
+        }
+    }
+
+    // Valiendo barriga
+    for (let i = 0; i < palabrasTriggerValiendo.length; i++) {
+        if (command.includes(palabrasTriggerValiendo[i])) {
+            message.channel.send('señor verga');
+            break;
+        }
+    }
+
+    // Frases del Matatán
+    for (let i = 0; i < palabrasTriggerMatatan.length; i++) {
+        if (command.includes(palabrasTriggerMatatan[i])) {
+            message.channel.send('<:matatan:691802785913634816>');
+            break;
+        }
+    }
+
+    // Si Dios quiere
+    for (let i = 0; i < palabrasTriggerDios.length; i++) {
+        if (command.includes(palabrasTriggerDios[i])) {
+            message.channel.send('https://i.imgur.com/F62Cn4E.jpg');
+            break;
+        }
+    }
+
+    // Puro pendejo usa Joycon
+    for (let i = 0; i < palabrasTriggerJoycon.length; i++) {
+        if (command.includes(palabrasTriggerJoycon[i])) {
+            message.channel.send('https://i.imgur.com/eHYWCPU.png');
+            break;
+        }
+    }
+
+    // Salud Matatán
+    for (let i = 0; i < palabrasTriggerSaludMatatan.length; i++) {
+        if (command.includes(palabrasTriggerSaludMatatan[i])) {
+            message.channel.send('https://i.imgur.com/FLQT9B2.jpg');
+            break;
+        }
+    }
+
+    // Cuando el Shinobi postea algo en el canal de 🍲│comida
+    if (message.channel.id == comidaChannelId) {
+        if (message.author.bot) return;
+
+        let author = message.author.id;        
+
+        if (author == client.users.cache.find(u => u.tag === 'shinobipunk#7122').id) {
+            message.channel.send('https://i.imgur.com/9XsTQuI.png');
+        }
+    };
 });
-
-
 
 // Buenos días Mode 7
 let buenosDiasMode7 = new cron.CronJob('00 00 7 * * sun-thu', () => {
