@@ -14,9 +14,6 @@ const client = new Client({
     ]
 });
 
-// Disable max listeners
-process.setMaxListeners(50);
-
 // Guild ID
 // const guild = guildId; // ID del Guild Local
 const guild = process.env.GUILD_ID; // ID del Guild Remoto
