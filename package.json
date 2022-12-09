@@ -25,5 +25,8 @@
   "dependencies": {
     "cron": "^2.1.0",
     "discord.js": "^14.7.1"
+  },
+  "engines": {
+    "node": "18.12.1"
   }
 }
