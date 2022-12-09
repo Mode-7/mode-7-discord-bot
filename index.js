@@ -27,7 +27,7 @@ const gamingGeneralChannelId = '478782494666129419'; // Canal gaming general
 const helpChannelId = '973608999410872400'; // Canal de ayuda
 const comidaChannelId = '602245119344902144'; // Canal de comida
 const mariokartChannelId = '478782450806292481'; // Canal Mario Kart
-// const ctrChannelId = '731357870364295198'; // Canal Crash Team Racing
+const ctrChannelId = '731357870364295198'; // Canal Crash Team Racing
 
 // IDs de roles
 const jugonNovatoRolId = '806620168939503636'; // Rol de Jugón Novato
