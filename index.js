@@ -39,7 +39,7 @@ const jugonLeyendaRolId = '806620208705568768'; // Rol de Jugón Leyenda
 const julzUserId = '426098208708624384';
 
 const PORT = process.env.PORT || 3000;
-const app.listen(PORT, () => {
+client.listen(PORT, () => {
     console.log(`The app is running on port ${ PORT }`);
 });
 
