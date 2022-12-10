@@ -38,11 +38,6 @@ const jugonLeyendaRolId = '806620208705568768'; // Rol de Jugón Leyenda
 // IDs de ciertos usuarios
 const julzUserId = '426098208708624384';
 
-const PORT = process.env.PORT || 3000;
-client.listen(PORT, () => {
-    console.log(`The app is running on port ${ PORT }`);
-});
-
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
