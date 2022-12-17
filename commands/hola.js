@@ -6,6 +6,6 @@ module.exports = {
 		.setName('hola')
 		.setDescription('Usa este comando para recibir un saludo del Mode 7 Bot.'),
 	async execute(interaction) {
-		await interaction.reply(`¡Holi ${interaction.user.username}! Estás bien guap@ y así.`);
+		await interaction.reply(`¡Holi ${interaction.user.username}! ¿Unos besillos o que? 🤤`);
 	},
 };
