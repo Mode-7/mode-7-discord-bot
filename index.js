@@ -208,6 +208,10 @@ client.on("messageCreate", async message => {
     ];
 
     const palabrasTriggerHermabot = [
+        "bot",
+        "@bot",
+        "Mode 7 Bot",
+        "@Mode 7 Bot",
         "hermabot",
         "Hermabot",
         "HERMABOT"
@@ -217,14 +221,16 @@ client.on("messageCreate", async message => {
         "¿qué pedo, yo qué?",
         "hermabot, hermano, ya eres mexicano",
         "¿qué pasó?",
-        "¿qué onda, qué onda?",
+        "¿qué rollo?",
         "soy Suave",
         "tuuuuut",
-        "¿qué tranza prros?",
+        "¿qué tranza?",
         "ni saben leer, jaja 🤭",
         "al chile SIUUUU",
         `¿qué pedo mi ${message.member.user.username}?`,
-        `¿qué pasó ${message.member.user.username}? ¿me hablas?`
+        `¿qué pasó ${message.member.user.username}? ¿me hablabas o qué?`,
+        "https://i.imgur.com/VPPPlA8.jpg",
+        "¿Qué, qué, qué?, ¿es algo sobre pizza?\n\nhttps://i.imgur.com/KO1AiKs.png"
     ];
 
     const palabrasTriggerJulz = [
