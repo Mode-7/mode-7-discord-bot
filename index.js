@@ -1,8 +1,11 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-// const { clientId, guildId, token } = require('./config.json');
+const { clientId, guildId, token } = require('./config.json');
 const cron = require('cron');
+
+//DEBUG
+const debugEnabled = false;
 
 // Create a new client instance and specify needed intents
 const client = new Client({ 
@@ -15,8 +18,8 @@ const client = new Client({
 });
 
 // Guild ID
-// const guild = guildId; // ID del Guild Local
-const guild = process.env.GUILD_ID; // ID del Guild Remoto
+const guild = guildId; // ID del Guild Local
+//const guild = process.env.GUILD_ID; // ID del Guild Remoto
 
 // IDs de canales
 const announcementChannelId = '664249693601267743'; // Canal de anuncios
@@ -37,6 +40,7 @@ const jugonLeyendaRolId = '806620208705568768'; // Rol de Jugón Leyenda
 
 // IDs de ciertos usuarios
 const julzUserId = '426098208708624384';
+const hermabotId = '733920906023403623';
 
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
@@ -83,28 +87,20 @@ client.on("messageCreate", async message => {
 
     const palabrasTriggerJugon = [
         "mode 7",
-        "Mode 7",
         "mode7",
-        "Mode7",
         "jugón",
         "jugon",
         "jugona",
         "jugones",
         "jugonas",
-        "Jugón",
-        "Jugon",
-        "Jugona",
-        "Jugones",
-        "Jugonas",
-        "cascajo",
-        "Cascajo"
+        "cascajo"
     ];
 
     const respuestasJugon = [
         "eso tilín",
         "soñé que Mulaka estaba chido raza 😕",
         "jugón mis webos",
-        `ni eres tan jugón mi ${message.member.user.username}, ¿pa' qué te haces?`,
+        `ni eres tan jugón mi ${message.member.displayName}, ¿pa' qué te haces?`,
         "ya no te he visto tan jugón",
         "una sesioncita jugona, ¿o qué?",
         "los pelijuegos no cuentan",
@@ -112,12 +108,12 @@ client.on("messageCreate", async message => {
         "puro free to play, así que chiste",
         "¿andamos jugones o qué?",
         "la pura crema y nata jugona aquí",
-        `yo si te saco los negros más negros mi ${message.member.user.username}`,
+        `yo si te saco los negros más negros mi ${message.member.displayName}`,
         "Lord Jugón",
         "jugón se nace, no se hace",
         "pura frase jugona ustedes, se pasan xD",
         "ahora si que el <:pri:733044345262964837> porteó más",
-        `ah prre ${message.member.user.username} 👀`,
+        `ah prre ${message.member.displayName} 👀`,
         "súper jugón",
         "¿jugón y alucín?",
         "jugones, los quiero",
@@ -138,9 +134,41 @@ client.on("messageCreate", async message => {
         "ahorita en la noche de splatoon"
     ];
 
+    const palabrasTriggerOjetes = [
+        "ojete",
+        "ojetito"
+    ];
+
+    const respuestasOjetes = [
+        "https://cdn.discordapp.com/attachments/1118774371205513217/1121913030083629086/No_que_muy_vergs_ojetitos.mp4",
+        "https://cdn.discordapp.com/attachments/1118774371205513217/1121956923844075550/download.jpg",
+        "https://cdn.discordapp.com/attachments/1118774371205513217/1121956936959660102/download.jpg",
+        "https://cdn.discordapp.com/attachments/1118774371205513217/1121956952646373376/27f4c03feb2b7943eacc24e441297a581a7cb22d398a1b351cbdd28180dcc495_1.jpg",
+        "https://cdn.discordapp.com/attachments/1118774371205513217/1121956970874814516/images.jpg",
+        "https://cdn.discordapp.com/attachments/1118774371205513217/1121956991187824650/download.jpg",
+        "https://cdn.discordapp.com/attachments/1118774371205513217/1121957058992947362/2287414.jpg",
+        "https://cdn.discordapp.com/attachments/1118774371205513217/1121957059311702058/533976.jpg"
+    ];
+
+    const respuestasPeda = [
+        "https://img.memegenerator.net/instances/81137401.jpg",
+        "https://cdn.discordapp.com/attachments/1118774371205513217/1121897877027954728/images.jpg",
+        "https://cdn.discordapp.com/attachments/1118774371205513217/1121898035811717221/istockphoto-1392916754-612x612.jpg",
+        "https://cdn.discordapp.com/attachments/1118774371205513217/1121898325159972884/images.jpg",
+        "https://cdn.discordapp.com/attachments/1118774371205513217/1121898612423655434/images.jpg",
+	"https://cdn.discordapp.com/attachments/875506827377381456/1122243674517012674/Feliz-viernes-1687634119259.mp4"
+    ];
+
+    const palabrasTriggerPeda = [
+        "peda",
+        "pisto",
+        "fiesta"
+    ];
+
     const palabrasTriggerJueves = [
         "jueves",
-        "Jueves"
+        "jueveves",
+        "viernes chiquito"
     ];
 
     const respuestasJugonJueves = [
@@ -157,8 +185,6 @@ client.on("messageCreate", async message => {
     const palabrasTriggerJueves1 = [
         "siento que arranco",
         "siento que arranco...",
-        "Siento que arranco",
-        "Siento que arranco..."
     ];
 
     const respuestasJugonJueves1 = [
@@ -167,9 +193,6 @@ client.on("messageCreate", async message => {
 
     const palabrasTriggerJueves2 = [
         "voy enfierrado",
-        "voy enfierrado...",
-        "Voy enfierrado",
-        "Voy enfierrado..."
     ];
 
     const respuestasJugonJueves2 = [
@@ -177,10 +200,7 @@ client.on("messageCreate", async message => {
     ];
 
     const palabrasTriggerJueves3 = [
-        "mi troca casi se desparpaja",
-        "mi troca casi se desparpaja...",
-        "Mi troca casi se desparpaja",
-        "Mi troca casi se desparpaja..."
+        "mi troca casi se desparpaja"
     ];
 
     const respuestasJugonJueves3 = [
@@ -189,13 +209,7 @@ client.on("messageCreate", async message => {
 
     const palabrasTriggerJueves4 = [
         "llevo un fletazo pal otro lado",
-        "llevo un fletazo pal otro lado...",
-        "Llevo un fletazo pal otro lado",
-        "Llevo un fletazo pal otro lado...",
         "llevo un fletazo pa'l otro lado",
-        "llevo un fletazo pa'l otro lado...",
-        "Llevo un fletazo pa'l otro lado",
-        "Llevo un fletazo pa'l otro lado..."
     ];
 
     const respuestasJugonJueves4 = [
@@ -204,17 +218,16 @@ client.on("messageCreate", async message => {
 
     const palabrasTriggerPala = [
         "facebook",
-        "Facebook"
+        "feis",
+        "feisbuk",
+        "feisbook"
     ];
 
     const palabrasTriggerHermabot = [
         "bot",
-        "@bot",
-        "Mode 7 Bot",
-        "@Mode 7 Bot",
+        "mode 7 bot",
         "hermabot",
-        "Hermabot",
-        "HERMABOT"
+        "@"+hermabotId
     ];
 
     const respuestasHermabot = [
@@ -227,143 +240,82 @@ client.on("messageCreate", async message => {
         "¿qué tranza?",
         "ni saben leer, jaja 🤭",
         "al chile SIUUUU",
-        `¿qué pedo mi ${message.member.user.username}?`,
-        `¿qué pasó ${message.member.user.username}? ¿me hablabas o qué?`,
+        `¿qué pedo mi ${message.member.displayName}?`,
+        `¿qué pasó ${message.member.displayName}? ¿me hablabas o qué?`,
         "https://i.imgur.com/VPPPlA8.jpg",
         "¿Qué, qué, qué?, ¿es algo sobre pizza?\n\nhttps://i.imgur.com/KO1AiKs.png"
     ];
 
     const palabrasTriggerJulz = [
-        "julz",
         "Julz",
-        "@julz",
         "@Julz"
     ];
 
     const palabrasTriggerValiendo = [
         "valiendo barriga",
-        "valiendo Barriga",
-        "Valiendo barriga",
-        "Valiendo Barriga",
-        "baliendo barriga",
-        "baliendo Barriga",
-        "Baliendo barriga",
-        "Baliendo Barriga"
+        "baliendo barriga"
     ];
 
     const palabrasTriggerMatatan = [
-        "Hola, ¿cómo están?",
-        "hola, ¿cómo están?",
-        "Hola ¿cómo están?",
         "hola ¿cómo están?",
-        "Hola, cómo están?",
         "hola, cómo están?",
-        "Hola cómo están?",
         "hola cómo están?",
-        "Hola cómo están",
         "hola cómo están",
-        "Hola, ¿como están?",
         "hola, ¿como están?",
-        "Hola ¿como están?",
         "hola ¿como están?",
-        "Hola, como están?",
         "hola, como están?",
-        "Hola como están?",
         "hola como están?",
-        "Hola como están",
         "hola como están",
-        "Hola, ¿cómo estan?",
         "hola, ¿cómo estan?",
-        "Hola ¿cómo estan?",
         "hola ¿cómo estan?",
-        "Hola, cómo estan?",
         "hola, cómo estan?",
-        "Hola cómo estan?",
         "hola cómo estan?",
-        "Hola cómo estan",
         "hola cómo estan",
-        "Hola, ¿como estan?",
         "hola, ¿como estan?",
-        "Hola ¿como estan?",
         "hola ¿como estan?",
-        "Hola, como estan?",
         "hola, como estan?",
-        "Hola como estan?",
         "hola como estan?",
-        "Hola como estan",
         "hola como estan",
         "está en gamepass",
-        "Está en gamepass",
         "está en game pass",
-        "Está en game pass",
-        "está en Game Pass",
-        "Está en Game Pass",
         "esta en gamepass",
-        "Esta en gamepass",
         "esta en game pass",
-        "Esta en game pass",
-        "esta en Game Pass",
-        "Esta en Game Pass",
         "están en gamepass",
-        "Están en gamepass",
-        "están en game pass",
-        "Están en game pass",
-        "están en Game Pass",
-        "Están en Game Pass",
         "estan en gamepass",
-        "Estan en gamepass",
         "estan en game pass",
-        "Estan en game pass",
-        "estan en Game Pass",
-        "Estan en Game Pass",
         "bienvenidos una vez más",
-        "Bienvenidos una vez más",
         "bienvenidos una vez mas",
-        "Bienvenidos una vez mas",
-        "osea",
-        "Osea"
+        "osea"
     ];
 
     const palabrasTriggerDios = [
-        "si Dios quiere",
         "si dios quiere",
-        "si Dios kiere",
-        "si dios kiere",
-        "Si Dios quiere",
-        "Si dios quiere",
-        "Si Dios kiere",
-        "Si dios kiere"
+        "si dios kiere"
     ];
 
     const palabrasTriggerJoycon = [
-        "joy-con",
-        "Joy-con",
-        "Joy-Con",
-        "joy-Con",
-        "JOY-CON",
-        "joycon",
-        "JOYCON",
+        "joy-con",        
+        "joycon",        
         "joy con",
-        "JOY CON",
         "joycons",
-        "JOYCONS",
-        "joy cons",
-        "JOY CONS",
-        "Joycon",
-        "Joy Con",
-        "JOY CON",
-        "Joycons",
-        "Joy Cons"
+        "joy cons"
     ];
 
     const palabrasTriggerSaludMatatan = [
         "salud",
-        "Salud",
-        "SALUD"
+        "salucita",
+        "saludcita"
+    ];
+
+    const usuariosTriggerDEBUG = [
+        "mexicanskynet",
+        "itsmemijo"
     ];
 
     // Randomizar respuestas
     const responseJugon = Math.floor(Math.random() * respuestasJugon.length);
+    const responseOjetes = Math.floor(Math.random() * respuestasOjetes.length);
+    const responsePeda = Math.floor(Math.random() * respuestasPeda.length);
     const responseJugonJueves = Math.floor(Math.random() * respuestasJugonJueves.length);
     const responseJugonJueves1 = Math.floor(Math.random() * respuestasJugonJueves1.length);
     const responseJugonJueves2 = Math.floor(Math.random() * respuestasJugonJueves2.length);
@@ -371,7 +323,18 @@ client.on("messageCreate", async message => {
     const responseJugonJueves4 = Math.floor(Math.random() * respuestasJugonJueves4.length);
     const responseHermabot = Math.floor(Math.random() * respuestasHermabot.length);
 
-    const command = message.content;
+    const command = message.content.toLowerCase();
+    const commandIssuer = message.member.user.username.toLowerCase();
+
+    //DEVELOPER DEBUG
+    if(debugEnabled){
+        for(let i = 0; i < usuariosTriggerDEBUG.length; i++){
+            if(command.includes("debug") && commandIssuer.includes(usuariosTriggerDEBUG[i])){
+                message.channel.send("Esto es lo que veo: ``` "+message.content+" ``` ");
+            }
+            break;
+        }
+    }
 
     // Respuestas jugonas
     for (let i = 0; i < palabrasTriggerJugon.length; i++) {
@@ -380,6 +343,22 @@ client.on("messageCreate", async message => {
             break;
         }
     }
+
+    //Respuestas ojetes
+    for (let i = 0; i < palabrasTriggerOjetes.length; i++) {
+        if (command.includes(palabrasTriggerOjetes[i])) {
+            message.channel.send(respuestasOjetes[responseOjetes]);
+            break;
+        }
+    }
+
+    // Respuestas peda/fiesta
+    for (let i = 0; i < palabrasTriggerPeda.length; i++) {
+        if (command.includes(palabrasTriggerPeda[i])) {
+            message.channel.send(respuestasPeda[responsePeda]);
+            break;
+        }
+    }    
 
     // Comandos M7GP
     for (let i = 0; i < palabrasTriggerJueves.length; i++) {
@@ -419,7 +398,7 @@ client.on("messageCreate", async message => {
 
     // Press F to pay respects
     if (command === "f" || command === "F") {
-        message.channel.send(`${message.member.user.username} pide "efes" en el chat.`);
+        message.channel.send(`${message.member.displayName} pide "efes" en el chat.`);
     }
 
     // Le cae Marzito de aguafiestas
@@ -594,11 +573,11 @@ recordarM7GP.start();
 
 let flyerM7GP = new cron.CronJob('00 00 11 * * 4', () => {
     let mariokartChannel = client.channels.cache.get(mariokartChannelId);
-    mariokartChannel.send(`Y acuérdense de compartir el flyer, el hashtag y el código del torneo con sus amigos.\n\nCódigo: 0746-6549-8155\nLink a este canal: https://discord.gg/U77J5c6\n\nhttps://i.imgur.com/JKVAkXE.png`);
+    mariokartChannel.send(`Y acuérdense de compartir el flyer, el hashtag y el código del torneo con sus compas.\n\nCódigo: 0746-6549-8155\nLink a este canal: https://discord.gg/U77J5c6\n\nhttps://i.imgur.com/JKVAkXE.png`);
 }, null, false, 'America/Chihuahua');
 
 flyerM7GP.start();
 
 // Log in to Discord with your client's token
-// client.login(token); // Local
-client.login(process.env.BOT_TOKEN); // Remote
+client.login(token); // Local
+//client.login(process.env.BOT_TOKEN); // Remote
